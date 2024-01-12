@@ -1,0 +1,614 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "İletişim";
+}
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="~/Content/css/contact.css">
+}
+
+
+
+<br>
+
+<div class="sidebar" id="sidebarMenu">
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple disabled" data-content="yok">
+        <span>Kurumsal</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple active" data-content="1">
+        <span>Kişisel Verilerin Korunumu</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="2">
+        <span>Sözleşme ve Politikalar</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="3">
+        <span>Entegre Yönetim Sistemi Politikası</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="4">
+        <span>Hakkımızda</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="5">
+        <span>Müşteri Hizmetleri</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="6">
+        <span>Çerez Aydınlatma Metni</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="7">
+        <span>Online Ödeme Koşulları</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="8">
+        <span>İletişim</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple disabled" data-content="yok">
+        <span>Yardım</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="9">
+        <span>SSS</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="10">
+        <span>İptal, İade ve Değişim</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="11">
+        <span>Nasıl Bilet Alınır</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="12">
+        <span>Biletinizi Mi Kaybettiniz?</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple disabled" data-content="yok">
+        <span>Bizimle Çalışın</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="13">
+        <span>İş Başvurusu</span>
+    </a>
+</div>
+
+<main>
+    <div class="content">
+        <div id="cardContainer" class="card mx-auto" style="width: 40rem; ">
+            <div class="card-body">
+                <h1>Kişisel Verilerin Korunması</h1>
+                <p>
+                    Müşterilerimizin kişisel verilerinin güvenliğine ve gizliliğine büyük önem veriyoruz. BUbilet'in
+                    sunduğu tüm hizmetlerde paylaştığınız kişisel verilerinizin işlenmesi, aktarılması, saklanması
+                    ve imha edilmesi, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK" / "Kanun") kapsamında
+                    titizlikle yönetilmektedir. Bu doğrultuda, kişisel verilerinizin kullanımı ve korunmasıyla
+                    ilgili haklarınızı anlamanızı sağlamak amacıyla hazırladığımız politika ve aydınlatma metinleri
+                    aşağıda sunulmuştur.
+
+                    Belirtilen politika ve aydınlatma metinlerine göre, ilgili mevzuat hükümleri doğrultusunda
+                    kişisel verileriniz ve özel nitelikli kişisel verileriniz kaydedilebilir, arşivlenebilir,
+                    güncellenebilir, aktarılabilir, sınıflandırılabilir ve KVKK'ya uygun şekillerde işlenebilir.
+                </p>
+
+                <b>
+                    <h6>
+                        <a href="Kişisel Verilerin Korunması" style="color: black;">
+                            Kişisel Verilerin Korunması ve
+                            İşlenmesi (Kvkk) Politikası
+                        </a>
+                    </h6>
+                </b>
+                <br>
+                <b>
+                    <h6>
+                        <a href="Kişisel Verilerin Korunması" style="color: black;">
+                            Kişisel Verilerin Korunması ve
+                            İşlenmesi (Kvkk) Politikası
+                        </a>
+                    </h6>
+                </b>
+                <br>
+                <b>
+                    <h6>
+                        <a href="Kişisel Verilerin Korunması" style="color: black;">
+                            Kişisel Verilerin Korunması ve
+                            İşlenmesi (Kvkk) Politikası
+                        </a>
+                    </h6>
+                </b>
+                <br>
+                <b>
+                    <h6>
+                        <a href="Kişisel Verilerin Korunması" style="color: black;">
+                            Kişisel Verilerin Korunması ve
+                            İşlenmesi (Kvkk) Politikası
+                        </a>
+                    </h6>
+                </b>
+                <br>
+                <b>
+                    <h6>
+                        <a href="Kişisel Verilerin Korunması" style="color: black;">
+                            Kişisel Verilerin Korunması ve
+                            İşlenmesi (Kvkk) Politikası
+                        </a>
+                    </h6>
+                </b>
+
+            </div>
+        </div>
+
+        <div id="cardContainer2" class="card mx-auto" style="width: 50rem;  display: none;">
+            <div class="card-body">
+                <h1>Sözleşme ve Politikalar</h1>
+                <p>
+                    563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun’un (“Kanun”) 3 üncü maddesi
+                    gereğince, Bubilet Bilet Basım ve Dağıtım A.Ş. (Bubilet) ile ilgili tanıtım bilgilerine,
+                    sitemizin “Hakkımızda” başlıklı bölümünden ulaşabilirsiniz.
+
+                    Bubilet ziyaret etmek veya bilet satın almakla, bu sitenin kullanılmasına ilişkin tüm koşulları,
+                    gizlilik politikasını ve site ile ilgili tüm cari kanunları, yönetmelikleri ve mevzuatı açıkça
+                    kabul etmiş sayılırsınız.
+                </p>
+
+                <h3>Sözleşme ve Politikalar</h3>
+
+                <p>
+                    BUbilet : Bu Bilet Bilet Basım ve Dağıtım A.Ş., Bu Bilet.com online bilet hizmeti, cep
+                    telefonları, tabletler ve her türlü benzeri elektronik ortamda kullanılan Bu Bilet mobil bilet
+                    hizmetleri ve/veya bu hizmete ilişkin etkinlik mekanlarında yer alan kioskları da kapsayan tüm
+                    içeriği ifade eder.
+
+                    "Kullanıcı" : Bubilet ziyaret eden ve/veya bilet alan kişiyi ifade eder.
+
+                    “Hizmet”: Kullanıcının Bu Bilet üzerinden bilet satın alma işlemini ifade eder.
+
+                    "Hizmet Bedeli" : Yapılan anlaşmalar dahilinde bazı etkinliklerde biletin gişe satış fiyatı
+                    üzerine eklenerek Kullanıcıdan tahsil edilen ve Bu Bilet yapmış olduğu hizmetler için alınacak
+                    olan bedeli ifade eder.
+
+                    Bu Bilet sitesini ziyaret ettiğinizde, ziyaretinize ait genel nitelikte, kişisel olmayan bazı
+                    bilgiler toplanıp kaydedilebilir. Bu bilgiler içinde, ziyaretinizin zamanı ve süresi, sitede
+                    izlenen sayfalar ve bizim sitemize gelmeden hemen önce ziyaret edilen sitenin bilgisi de
+                    bulunabilir. Bu bilgiler sadece, site aktivitesini ölçmek, sitemizi geliştirecek fikirler
+                    üretebilmek ve sizlerin site içerisindeki işlemlerinizi hızlandırmak için kullanılır. Sitemiz
+                    tüm ziyaretçilerin kullanımına açık olmakla birlikte, sadece üyelerin izlemesine ve katılımına
+                    açık bazı bölümler de içermektedir. Sitedeki haber ve bölümler hakkında görüş bildirme,
+                    etkileşimli anket, test ve yarışmalara katılım bunların başlıcalarıdır. Bu bölümleri
+                    kullanabilmek için üye girişi yapmanız gerekecektir.
+                </p>
+
+                <h3>Kişisel Verilerin Korunması</h3>
+
+                <p>
+                    Bu Bilet : Bu Bilet Bilet Basım ve Dağıtım A.Ş., Bu Bilet.com online bilet hizmeti, cep
+                    telefonları, tabletler ve her türlü benzeri elektronik ortamda kullanılan Bu Bilet mobil bilet
+                    hizmetleri ve/veya bu hizmete ilişkin etkinlik mekanlarında yer alan kioskları da kapsayan tüm
+                    içeriği ifade eder.
+
+                    "Kullanıcı" : Biletinial’ı ziyaret eden ve/veya bilet alan kişiyi ifade eder.
+
+                    “Hizmet”: Kullanıcının Bu Bilet üzerinden bilet satın alma işlemini ifade eder.
+
+                    "Hizmet Bedeli" : Yapılan anlaşmalar dahilinde bazı etkinliklerde biletin gişe satış fiyatı
+                    üzerine eklenerek Kullanıcıdan tahsil edilen ve Bu Bilet yapmış olduğu hizmetler için alınacak
+                    olan bedeli ifade eder.
+
+                    Bu Bilet sitesini ziyaret ettiğinizde, ziyaretinize ait genel nitelikte, kişisel olmayan bazı
+                    bilgiler toplanıp kaydedilebilir. Bu bilgiler içinde, ziyaretinizin zamanı ve süresi, sitede
+                    izlenen sayfalar ve bizim sitemize gelmeden hemen önce ziyaret edilen sitenin bilgisi de
+                    bulunabilir. Bu bilgiler sadece, site aktivitesini ölçmek, sitemizi geliştirecek fikirler
+                    üretebilmek ve sizlerin site içerisindeki işlemlerinizi hızlandırmak için kullanılır. Sitemiz
+                    tüm ziyaretçilerin kullanımına açık olmakla birlikte, sadece üyelerin izlemesine ve katılımına
+                    açık bazı bölümler de içermektedir. Sitedeki haber ve bölümler hakkında görüş bildirme,
+                    etkileşimli anket, test ve yarışmalara katılım bunların başlıcalarıdır. Bu bölümleri
+                    kullanabilmek için üye girişi yapmanız gerekecektir.
+                </p>
+            </div>
+        </div>
+
+        <div id="cardContainer3" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h1>Entegre Yönetim Sistemi Politikası</h1>
+                <p>
+                    Kişisel Veri-İş Sürekliliği ve Bilgi Güvenliği kapsamında temel hedeflerimiz kapsamında;
+
+                    -Kişisel Veri yönetim sistemimizin ISO 27701:2019- İş Sürekliliği Yönetim Sistemimizin ISO
+                    22301:2019 ve Bilgi Güvenliği Yönetim Sistemimizin ISO 27001:2013 standardının gereklerini
+                    yerine getirecek şekilde dokümante edilmesi, belgelendirilmesi ve sürekli iyileştirilmesini
+                    sağlamayı,
+
+                    -Çalışanların Kişisel Veri - İş Sürekliliği ve Bilgi Güvenliği farkındalığını artırmayı,
+
+                    -Stratejik iş planı ve risk yönetimi çerçevesinde, Kişisel Veri - İş Sürekliliği ve Bilgi
+                    Güveliği yönetim sisteminin kurulup sürekliliğinin sağlanması için ilgili riskleri tanımlamayı,
+                    belirlemeyi, değerlendirmeyi ve kontrol etme işlevini yerine getirmeyi,
+
+                    -Kişisel Veri - İş Sürekliliği ve Bilgi güvenliği ile ilgili tüm yasal mevzuat ve sözleşmelere
+                    uyulmasını,
+
+                    -Bilgi varlıklarına yönelik risklerin sistematik olarak yönetilmesini,
+
+                    -Kişisel Veri - İş Sürekliliği ve Bilgi Güvenliği Yönetim Sistemi kapsamında müşterilerimizin
+                    bilgi varlıklarının gizliliğini, bütünlüğünü sağlamayı,
+
+                    -Sektör içerisinde bilgi güvenliği açısından örnek bir kuruluş olmak için özveri ile çalışmayı
+
+                    taahhüt ederiz.
+                </p>
+            </div>
+        </div>
+
+        <div id="cardContainer4" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h1>Hakkımızda</h1>
+                <p>
+                    2023 senesinde biletleme sektöründe hizmet vermeye başlayan Bu Bilet.com, tüketiciyi yeni
+                    gelişen teknolojiler ışığında etkinliklerle buluşturma noktasında çözüm üreten ve tüketicilere
+                    keyifli anlar deneyimlemelerine olanak tanıyan bir biletleme firmasıdır.
+                </p>
+
+                <p>
+                    Hizmet vermeye başladığı günden itibaren yazılım mühendislerinin geliştirdiği teknoloji ve
+                    yeniliklerle tüketicisini birçok etkinlikle başarılı şekilde buluşturan Bu Bilet.com, ulusal ve
+                    uluslararası çapta yaptığı başarılı organizasyonlarla müşterilerin etkinliklere zahmetsizce
+                    erişimini sağlamıştır.
+                </p>
+
+                <p>
+                    Sürekli büyüyen altyapımız ile sinema, tiyatro, konser, spor ve birçok farklı özel etkinlik
+                    alanında 300’den fazla sinema, 2000’den fazla salon ve 220.000’den fazla koltuk kapasitesiyle
+                    sürekli alt yapı ve satış imkânı sağlamaktadır.
+                </p>
+
+                <p>
+                    Biletinial’ın iş ortakları arasında; T.C. Kültür ve Turizm Bakanlığı’na bağlı birimler (Devlet
+                    Tiyatroları, Devlet Opera ve Balesi, Güzel Sanatlar Genel Müdürlüğü konserleri), TVF (Türkiye
+                    Voleybol Federasyonu) Türkiye'nin önde gelen sinema grupları, özel tiyatrolar, şehir
+                    tiyatroları, spor kulüpleri, performans sahneleri, festivaller ve theme parklar ile eğlence
+                    parklarının yanı sıra eğitim ve seminer organizasyonu gerçekleştiren kurumlar da yer almaktadır.
+                </p>
+
+                <p>
+                    Bu Bilet.com biletleme sistemi Türkiye genelinde 63 ilde ve Kıbrıs Türk Cumhuriyeti’nde başarı
+                    ile çalışmakta ve etkinlik biletlemesi için çözümler üretmektedir.
+                </p>
+
+                <p>
+                    Bu Bilet, 2020 yılında bölgesel ve global bir marka olma hedefiyle, bugüne kadar elde ettiği
+                    bilgi birikimini benzersiz iş modelleri ve uçtan uca çözümler sunan teknolojik alt yapısı ile
+                    harmanlayarak çok yakında yurtdışında da hizmet vermeye başlıyor.
+                </p>
+
+                <p>
+                    Yenilikçi teknoloji sayesinde tüketicilere benzersiz deneyimler sunma konusunda kendini her gün
+                    yeni teknolojiler ışığında geliştiren Bu Bilet, inovasyon ve operasyon tutkusuyla tüketicilere
+                    en iyi ve zahmetsiz hizmeti sunmayı amaçlamaktadır.
+                </p>
+
+                <p>
+                    Bu Bilet.com Bu Bilet Bilet Basım ve Dağıtım A.Ş.'nin Uluslararası geçerliliği olan patent
+                    kuralları ile koruma altına alınmış tescilli markasıdır.
+                </p>
+
+                <p>
+                    Bu Bilet, 2023 yılı itibariyle Pick a Seat markasıyla Avrupa operasyonlarına başlamıştır.
+                </p>
+
+            </div>
+        </div>
+
+        <div id="cardContainer5" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h3>Müşteri Hizmetleri</h3>
+                <p>
+                    Bizim için müşteri memnuniyeti, sunduğumuz hizmetin kalitesi kadar önemlidir. Bu nedenle müşteri
+                    hizmetlerimiz; size en hızlı, çözüm odaklı ve ihtiyaçlarınıza en uygun çerçevede hizmet
+                    verebilmek için büyük bir emekle çalışmaktadır.
+                </p>
+
+                <p>
+                    Sorularınız, önerileriniz ve çözülmesini istediğiniz problemleriniz için <a href="mailto:info@BuBilet.com">info@BuBilet.com</a> mail adresimizden veya <a href="tel:08503339911">0 (850) 333 99 11</a> müşteri hizmetleri hattımızdan haftanın 7 günü
+                    09:00-22:00 saatleri arasında bize ulaşabilirsiniz.
+                </p>
+
+                <p>
+                    WhatsApp Destek: <a href="#">0 (850) 00000</a>
+                </p>
+
+            </div>
+        </div>
+        <div id="cardContainer6" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>Çerez Aydınlatma Metni</h2>
+                <h3>1. AMAÇ</h3>
+                <p>
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu’nun (“KVKK”) 10. maddesine istinaden, Veri
+                    Sorumlusu sıfatıyla hareket eden BİLETİM BİLET BASIM VE DAĞITIM ANONİM ŞİRKETİ’nin kişisel
+                    verilerin kullanım süreçleri hakkında ilgili kişileri bilgilendirme yükümlülüğü bulunmaktadır.
+                    İşbu aydınlatma metni, ilgili kişilere kişisel verilerin işlenmesi, üçüncü kişilere aktarılması,
+                    kişisel verilerin toplanma yöntemleri ve hukuki sebepleri ile KVKK’da yer alan haklar
+                    konularında bilgilendirme yapmak amacıyla hazırlanmıştır.
+                </p>
+
+                <h3>2. KAPSAM</h3>
+                <p>
+                    Aydınlatma Metninin kapsamı; www.biletim.com internet sitesinde yer alan çerezler aracılığıyla
+                    kişisel veri işleme süreçlerini kapsamaktadır.
+                </p>
+
+                <h3>3. TANIMLAR</h3>
+                <p>
+                    Kişisel veri, kimliği belirli veya belirlenebilir gerçek kişiye ait her türlü bilgiyi ifade
+                    etmektedir.
+                </p>
+                <p>
+                    Çerezler, bir internet sitesi ziyaret edildiği zaman tarayıcılardaki kullanıcıların depolandığı
+                    küçük dosyalardır. Tarayıcı, kişilerin internet sitesi üzerinde etkinliklerini geçmişinde kayıt
+                    tutar. Bu sayede internet sitesinin bir sonraki ziyaret edilişinde bu bilgiler sunucuya geri
+                    gönderilerek internet sitesine giriş yapılan cihaz otomatik olarak tanınır.
+                </p>
+
+                <h3>4. AYDINLATMA METNİ</h3>
+                <p>
+                    Aydınlatma Metninin kapsamı; www.biletim.com internet sitesinde yer alan çerezler aracılığıyla
+                    kişisel veri işleme süreçlerini kapsamaktadır.
+                </p>
+
+
+                <h3>5. Çerez Tercihlerinin Değiştirilmesi</h3>
+                <p>Gizlilik Tercih Paneli üzerinden çerez tercihleri değiştirilebilir.</p>
+
+            </div>
+        </div>
+
+
+        <div id="cardContainer7" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>Online Ödeme Koşulları</h2>
+                <p>
+                    Kredi kartı aracılığı ile gerçekleştirilen ödeme, ilgili banka tarafından Bu Bilet sistemi
+                    aracılığı ile online olarak gerçekleştirilmektedir.
+                </p>
+                <p>"Ödeme" butonuna bastığınızda açıklanan bilgi ve koşulları kabul etmiş sayılırsınız.</p>
+                <p>
+                    Sistemimiz “Rabbit 128 bit SSL Sertifikası” ile güvenlik kapsamı içindedir. Ödeme sırasında
+                    kullanmış olduğunuz kredi kartınıza ait bilgiler sistemimiz üzerinde kaydedilmemektedir.
+                </p>
+                <p>
+                    Ödeme işlemine onay verdikten sonra lütfen sabırlı olunuz, işleminizin bankadan onayı zaman
+                    alabilir.
+                </p>
+                <p>
+                    Söz konusu sistem her hangi bir sorun nedeni ile işlemi gerçekleştiremiyorsa ödeme sayfası
+                    sonucunda ziyaretçimiz bu durumdan haberdar edilmektedir.
+                </p>
+                <p>
+                    Ödeme işlemi gerçekleştikten sonra siparişlerinizi iptal edilemez ya da değiştirilemez. Bu yüzden
+                    lütfen sepet içeriğinizi kontrol ettikten ve içeriğinden emin olduktan sonra işleminizi
+                    onaylayınız.
+                </p>
+                <p>
+                    Gününde ve saatinde kullanılmayan biletler geçersiz olup, bilet bedeli ve hizmet bedeli iadesi
+                    ve/veya değişiklik yapılması mümkün değildir. Gün ve saatinde kullanılmayan biletlerin iadesi
+                    için Bu Bilet'dan talepte bulunulamaz.
+                </p>
+                <p>
+                    Etkinliğin herhangi bir şekilde iptal edilmesinden firmamız sorumlu değildir. Ancak etkinlik
+                    iptali ya da etkinlik tarihinin ertelemesi gibi bilgiler bilet satın alırken kayıt etmiş
+                    olduğunuz telefon numaranız veya e-posta adresiniz üzerinden sizlere duyurulacaktır.
+                </p>
+                <p>
+                    Satın alınan etkinliklerin içerik ve görselleri anlaşmış olduğumuz organizatör firmalarca
+                    tarafımıza iletilmekte olup, iletildiği şekli ile sizlere sunulmaktadır. Etkinliklere ait içerik
+                    farklılıklarından ve görsellere ait telif haklarından kaynaklı sorunlarda firmamızın sorumluluğu
+                    bulunmamaktadır. Ayrıca etkinliklerin beklenen kalitesi ile ilgili bir garanti verilmemektedir.
+                </p>
+                <p>
+                    Bilet satışlarıyla ilgili belirlenen hizmet bedelleri; bilet satışı yapılan organizatör ile
+                    yapılan sözleşmelerde belirlenmiştir. Bilet satın alınan etkinlikler için bilet değeri içinden
+                    veya bilet bedeli üzerine eklenecek şekilde hizmet bedeli alınmaktadır. Bilet satın alma işlemi
+                    sırasında adınız, adresiniz, telefon numaranız, e-posta adresiniz, irtibat tercihleriniz gibi
+                    çeşitli bilgileri toplayabiliriz. Onay vererek bizimle paylaşacağınız bu bilgiler, başka hiçbir
+                    kişi ya da şirketle paylaşılmayacak, sadece ilgi alanlarınıza yönelik haber ve etkinlikler
+                    sunmak, sizi sitemizdeki yeniliklerden ve etkinliklerden haberdar etmek için kullanılacaktır.
+                </p>
+                <p>
+                    Amacımız sizlere kaliteli ve güvenli hizmet sunabilmektir. Görüş ve önerilerinizi
+                    info@BuBilet.com e-posta adresimiz üzerinden bize iletebilirsiniz.
+                </p>
+            </div>
+        </div>
+
+        <div id="cardContainer8" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>İletişim</h2>
+                <p>BuBilet Bilet Basım ve Dağıtım A.Ş.</p>
+                <p>Adres: Üçevler Mh. Ünseven Sk. No:5/6 16270 Nilüfer/BURSA</p>
+                <p>Telefon: 0 (850) 0000</p>
+                <p>WhatsApp Destek: 0 (850) 0000</p>
+                <p>E-Posta: <a href="mailto:info@BuBilet.com">info@BuBilet.com</a></p>
+
+            </div>
+        </div>
+
+        <div id="cardContainer9" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>Sık Sorulan Sorular</h2>
+                <p><strong>Müşteri hizmetleri bölümünüze nasıl ulaşabilirim?</strong></p>
+                <p>
+                    Sayfamızın sağ alt köşesinde bulunan 0850 0000numaralı Müşteri Hizmetleri hattımızdan ya da <a href="mailto:info@BuBilet.com">info@BuBilet.com</a> e-posta adresinden bize ulaşabilirsiniz.
+                </p>
+
+                <p><strong>Size hangi zaman dilimlerinde ulaşabilirim?</strong></p>
+                <p>Bize haftanın 7 günü 09:00 - 22:00 saatleri arasında ulaşabilirsiniz.</p>
+
+                <p><strong>Etkinliğin gerçekleşeceği mekânın yerini nereden öğrenebilirim?</strong></p>
+                <p>
+                    Web sitemiz ve mobil uygulamamız üzerinden etkinliğin detay sayfasında yer alan adres bilgisine
+                    tıklayarak/dokunarak mekân adres bilgilerine ulaşabilirsiniz.
+                </p>
+
+                <p>
+                    <strong>
+                        BuBilet.com üzerinden ve/veya mobil uygulamadan biletimi satın aldım, peki biletimin
+                        aslını nereden almam gerekiyor?
+                    </strong>
+                </p>
+                <p>
+                    BuBilet.com, size "home ticket" olanağını sunmaktadır. Bu yöntemde bilet size e-posta ve sms ile
+                    ulaştırılır ve her bilet benzersiz bir işlem numarasına sahiptir. Etkinlik alalında yetkililere
+                    size iletilen sms ve/ya e-postada yer alan QR kodunu göstermeniz yeterlidir. KİOSK cihazı olan
+                    mekanlarda biletlerinizi BuBilet KİOSK cihazlarından da alabilirsiniz.
+                </p>
+
+                <p>
+                    <strong>Satın almış olduğum biletlerle ilgili e-posta ya da sms gelmedi, ne yapmalıyım?</strong>
+                </p>
+                <p>
+                    Öncelikle e-postanızda gelen kutusunda e-postamızı bulamıyorsanız, gereksiz (junk ve spam)
+                    kutusunu da kontrol ediniz. Baktığınız klasörlerde tarafımızdan e-posta gelmedi ise sağ alt
+                    köşedeki Çağrı Merkezi numaramızdan 0850 333 99 11 biletlerinizi işlem sırasında kullanmış
+                    olduğunuz e-posta ve telefon numarası ile kontrol ettirebilir, tekrardan sms gönderilmesini
+                    sağlayabilirsiniz.
+                </p>
+            </div>
+        </div>
+
+        <div id="cardContainer10" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>İptal, İade ve Değişim</h2>
+                <p>
+                    <strong>
+                        BuBilet.com tarafından satın alınan biletlerde iptal, iade veya değişiklik yapılabiliyor
+                        mu?
+                    </strong>
+                </p>
+                <p>
+                    BuBilet.com, organizasyon sahibi olmadığı ve yalnızca etkinlik biletlemesinden sorumlu olduğu
+                    için, mevcut organizasyonla ilgili herhangi bir iptal ya da değişiklik olmadığı sürece, ya da
+                    organizasyon sahibinin açıkladığı kurallar dışında satın alınan biletlerde herhangi bir
+                    değişiklik veya iade yapma hakkına sahip değildir.
+                </p>
+
+            </div>
+        </div>
+
+        <div id="cardContainer11" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>Nasıl Bilet Alınır</h2>
+                <ol>
+                    <li>Bilet almak istediğiniz etkinliği seçin ve "Biletini Al" linkine tıklayın.</li>
+                    <li>
+                        Bilet adetinizi veya koltuğunuzu seçin. İnternet üzerinden tek seferde maksimum 9 adet bilet
+                        satın alabilirsiniz.
+                    </li>
+                    <li>
+                        Bilgilerinizi girin ve bilet temin yöntemini seçin. Girdiğiniz bilgilerin doğruluğu biletin
+                        size ulaşmasında önemlidir.
+                    </li>
+                    <li>
+                        Ödeme işlemini gerçekleştirin. Ödeme işlemini tamamlamadan önce ekranı yenilemeyin ve sonuç
+                        sayfasını görmeden beklemeyin.
+                    </li>
+                    <li>
+                        Satın alma işleminin tamamlanmasının ardından, bilet bilgileriniz cep telefonunuza sms ve
+                        e-posta adresinize gönderilecektir.
+                    </li>
+                    <li>
+                        Sinema bileti aldıysanız, cep telefonunuza sms/e-posta ile gönderilen işlem numarası, sinema
+                        salonlarındaki kiosk cihazlarımızdan veya gişelerden biletinizi yazdırmanız için gereklidir.
+                    </li>
+                </ol>
+                <p>
+                    Sorunlarınız, önerileriniz ve eleştirileriniz için <a href="mailto:info@BuBilet.com">info@BuBilet.com</a> adresinden ve <a href="tel:08503339911">0 (850) 333 99 11</a> numaralı müşteri hizmetleri hattından bize
+                    ulaşabilirsiniz.
+                </p>
+
+            </div>
+        </div>
+
+        <div id="cardContainer12" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>Biletinizi mi Kaybettiniz?</h2>
+                <p>
+                    Eğer biletiniz bir elektronik bilet ise hiç korkmayın biz size yardımcı olabiliriz. Kaybettiğiniz
+                    bilet fiziki olarak satın aldığınız bilet ise biletin tekrar yazdırılması teknik olarak mümkün
+                    değildir. Bu nedenle satın aldığınız bileti saklamak ve korumak tamamen sizin
+                    sorumluluğunuzdadır.
+                </p>
+            </div>
+        </div>
+
+        <div id="cardContainer13" class="card mx-auto" style="width: 40rem; display: none;">
+            <div class="card-body">
+                <h2>İş Başvurusu</h2>
+                <p>
+                    Türkiye'nin en büyük etkinlik biletleme platformu BuBilet'ın büyümekte olan organizasyonunun bir
+                    parçası olmak için başvurularınızı bekliyoruz.
+                </p>
+                <p>
+                    İş başvuru sürecini hızlandırmak ve sizinle daha etkili iletişim kurabilmek adına, aşağıdaki
+                    online iş başvuru formumuzu doldurarak, yazılım, muhasebe, operasyon veya diğer departmanlarımız
+                    için başvuruda bulunabilirsiniz.
+                </p>
+                <form action="is-basvuru-gonder.php" method="post">
+                    <label for="firstName">Adı:</label><br>
+                    <input type="text" id="firstName" name="firstName" required><br><br>
+
+                    <label for="lastName">Soyadı:</label><br>
+                    <input type="text" id="lastName" name="lastName" required><br><br>
+
+                    <label for="city">Şehir:</label><br>
+                    <input type="text" id="city" name="city" required><br><br>
+
+                    <label for="district">İlçe:</label><br>
+                    <input type="text" id="district" name="district" required><br><br>
+
+                    <label for="email">E-Mail:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="resume">Öz Geçmiş:</label><br>
+                    <input type="file" id="resume" name="resume" required><br><br>
+
+                    <input type="checkbox" id="kvkk" name="kvkk" required>
+                    <label for="kvkk">İş başvurusuna yönelik KVKK aydınlatma metni okudum, anladım</label><br><br>
+
+                    <input type="submit" value="Gönder">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+<script>
+
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const sidebarItems = document.querySelectorAll('#sidebarMenu .list-group-item');
+        const contentContainers = Array.from(document.querySelectorAll('[id^="cardContainer"]'));
+
+        sidebarItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const activeItem = document.querySelector('.list-group-item.active');
+                if (activeItem) {
+                    activeItem.classList.remove('active');
+                }
+                item.classList.add('active');
+
+                const contentId = item.getAttribute('data-content');
+                contentContainers.forEach((container, index) => {
+                    container.style.display = index + 1 == parseInt(contentId) ? 'block' : 'none';
+                });
+            });
+        });
+    });
+
+</script>

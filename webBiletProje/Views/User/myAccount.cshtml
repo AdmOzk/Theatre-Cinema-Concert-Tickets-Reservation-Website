@@ -1,0 +1,209 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Profilim";
+}
+
+
+@section ViewStyles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="~/Content/css/myaccount.css">
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/myaccount.js"></script>
+}
+
+<br>
+<section class="out">
+    <div class='outwrapper'>
+        <div class="sidebar" id="sidebarMenu">
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple active" data-content="1">
+                <span>Bilgilerim</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-2 ripple" data-content="2">
+                <span>Biletlerim</span>
+            </a>
+            <a href="main.html" class="list-group-item list-group-item-action py-2 ripple" data-content="3">
+                <span>Çıkış</span>
+            </a>
+        </div>
+
+        <main class="main">
+            <div id="cardContainer" class="card-mx-auto">
+                <h3><img src="https://img.icons8.com/?size=256&id=H101gtpJBVoh&format=png"> Üyelik Bilgilerim</h3>
+                <form action="/tr-tr/WebLogin/UserUpdate" class="form-horizontal" id="frmRegister" method="post">
+                    <div class="form-group split" id="divFirstName">
+                        <div>
+                            <input class="form-control input-sm namesOnly" placeholder="Adı" data-val="true" data-val-length="Adı alanı en az 50 karakter olmalıdır." data-val-length-max="50" data-val-required="Lütfen Adınızı Girin" id="FirstName" maxlength="50" name="FirstName" type="text" value="Muhammed">
+                            <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                        </div>
+
+                        <div>
+                            <input class="form-control input-sm namesOnly" placeholder="Soyadı" data-val="true" data-val-length="Soyadı alanı en az 50 karakter olmalıdır." data-val-length-max="50" data-val-required="Lütfen Soyadınızı Girin" id="LastName" maxlength="50" name="LastName" type="text" value="Gülsoy">
+                            <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="divEmail">
+                        <input class="form-control" placeholder="E-Posta" data-val="true" data-val-length="E-posta alanı en az 250 karakter olmalıdır." data-val-length-max="250" data-val-required="Lütfen e-posta adresinizi girin." id="Email" maxlength="250" name="Email" type="email" value="gulsoyy002@gmail.com">
+                        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div id="cbCity" class="btn-group bootstrap-select input-sm">
+                            <select style="" name="CityId" class="form-control" data-val="true" data-val-number="The field Şehir must be a number." id="CityId">
+                                <option value="">ŞEHİR</option>
+                                <option value="5" selected="selected">İstanbul Avrupa</option>
+                                <option value="77">İstanbul Anadolu</option>
+                                <option value="11">Bursa</option>
+                                <option value="3">Ankara</option>
+                                <option value="24">İzmir</option>
+                                <option value="19">Eskişehir</option>
+                                <option value="12">Adana</option>
+                                <option value="96">Adıyaman</option>
+                                <option value="76">Afyon</option>
+                                <option value="97">Ağrı</option>
+                                <option value="75">Amasya</option>
+                                <option value="23">Antalya</option>
+                                <option value="80">Artvin</option>
+                                <option value="29">Aydın</option>
+                                <option value="25">Balıkesir</option>
+                                <option value="86">Bilecik</option>
+                                <option value="98">Bingöl</option>
+                                <option value="99">Bitlis</option>
+                                <option value="36">Bolu</option>
+                                <option value="81">Burdur</option>
+                                <option value="78">Çanakkale</option>
+                                <option value="79">Çankırı</option>
+                                <option value="74">Çorum</option>
+                                <option value="14">Denizli</option>
+                                <option value="10">Diyarbakır</option>
+                                <option value="53">Edirne</option>
+                                <option value="33">Elazığ </option>
+                                <option value="42">Erzincan</option>
+                                <option value="90">Erzurum</option>
+                                <option value="9">Gaziantep</option>
+                                <option value="88">Giresun</option>
+                                <option value="34">Gümüşhane</option>
+                                <option value="100">Hakkari</option>
+                                <option value="8">Hatay</option>
+                                <option value="28">Isparta</option>
+                                <option value="85">Mersin</option>
+                                <option value="101">Kars</option>
+                                <option value="41">Kastamonu</option>
+                                <option value="83">Kayseri</option>
+                                <option value="30">Kırklareli</option>
+                                <option value="102">Kırşehir</option>
+                                <option value="20">Kocaeli</option>
+                                <option value="13">Konya</option>
+                                <option value="38">Kütahya</option>
+                                <option value="15">Malatya</option>
+                                <option value="69">Manisa</option>
+                                <option value="89">Kahramanmaraş</option>
+                                <option value="103">Mardin</option>
+                                <option value="4">Muğla</option>
+                                <option value="104">Muş</option>
+                                <option value="18">Nevşehir</option>
+                                <option value="82">Niğde</option>
+                                <option value="48">Ordu</option>
+                                <option value="32">Rize</option>
+                                <option value="39">Sakarya</option>
+                                <option value="43">Samsun</option>
+                                <option value="94">Siirt</option>
+                                <option value="92">Sinop</option>
+                                <option value="73">Sivas</option>
+                                <option value="84">Tekirdağ</option>
+                                <option value="106">Tokat</option>
+                                <option value="16">Trabzon</option>
+                                <option value="107">Tunceli</option>
+                                <option value="108">Şanlıurfa</option>
+                                <option value="68">Uşak</option>
+                                <option value="109">Van</option>
+                                <option value="110">Yozgat</option>
+                                <option value="6">Zonguldak</option>
+                                <option value="87">Aksaray</option>
+                                <option value="111">Bayburt</option>
+                                <option value="45">Karaman</option>
+                                <option value="26">Kırıkkale</option>
+                                <option value="95">Batman</option>
+                                <option value="112">Şırnak</option>
+                                <option value="35">Bartın</option>
+                                <option value="113">Ardahan</option>
+                                <option value="114">Iğdır</option>
+                                <option value="21">Yalova</option>
+                                <option value="91">Karabük</option>
+                                <option value="115">Kilis</option>
+                                <option value="49">Osmaniye</option>
+                                <option value="31">Düzce</option>
+                                <option value="55">Kıbrıs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a class="upDate" style="margin-right: 10px; padding: 0.55rem 1.5rem !important; margin-top: unset !important " onclick="Register()">Güncelle</a>
+                    </div>
+                </form>
+
+                <div class="col-md-12" style="margin-top: 20px;">
+                    <h3><img src="https://img.icons8.com/?size=256&id=H101gtpJBVoh&format=png">Cep Telefonu (GSM)</h3>
+                </div>
+
+                <div class="form-group row" id="divGsmNumber">
+
+                    <input disabled="" class="form-control input-sm col-md-8" placeholder="Cep Telefonu" id="GsmNumber" name="GsmNumber" type="text" value="5395174016">
+                    <div class="col-md-2">
+                        <a class="upDate" href="/WebLogin/GSMConfirm" style="padding: 0.55rem 1.5rem !important; margin-top: unset !important">Değiştir</a>
+                    </div>
+                </div>
+            </div>
+            <div id="cardContainer2" class="card-mx-auto" style="display: none; width:90%">
+
+                <h3><img src="https://img.icons8.com/?size=256&id=18638&format=png"> Biletlerim</h3>
+                <div class="biletlerim_tabs">
+                    <section class="tabs-content">
+                        <div id="biletlerim">
+                            <table id="example1" class="ticketsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Etkinlik</th>
+                                        <th>Bilet Sahibi</th>
+                                        <th>Etkinlik Türü</th>
+                                        <th>EBilet</th>
+                                        <th width="150">İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4">
+                                            <p>
+                                                Şuanda aktif biletiniz bulunmuyor
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <a href="/tr-tr/WebLogin/MyAllTickets" class="allticketbuttton">Tüm Biletlerim</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>

@@ -1,0 +1,638 @@
+﻿@model List<webBiletProje.Models.Ticket>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Biletim";
+}
+
+@section BodyClass {main-body}
+
+@section Styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 5vh;
+            height: 5vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+
+
+        * {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.3s ease;
+        }
+
+        #konser-column {
+            background-image: url('/Content/images/konser.jpg');
+        }
+
+        #film-column {
+            background-image: url('/Content/images/filmler/testere10.jpg');
+        }
+
+        #tiyatro-column {
+            background-image: url('/Content/images/tiyatro.jpg');
+        }
+
+        :root {
+            --main-color: #8EACCD;
+            --black-color: #0e0e0e;
+            --white-color: #ffff;
+            --border: 0.1rem solid rgba(255, 255, 255, 0.4)
+        }
+
+
+        /*! base html codes */
+        html {
+            font-size: 62.5%;
+            scrollbar-width: auto;
+            scrollbar-color: auto;
+        }
+
+
+        body {
+            background-color: var(--main-color);
+            /* height:200vh; */
+        }
+
+        section {
+            padding: 3.5rem 7%;
+        }
+
+
+
+
+        .heading {
+            color: #fff;
+            text-transform: capitalize;
+            padding: 1rem;
+            font-size: 4rem;
+            margin-top: 10rem;
+            margin-bottom: 3rem;
+        }
+        .heading-link {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+            font-size: 25px;
+            font-weight: bold;
+            padding-right: 20px
+        }
+
+        .logo img {
+            height: 6rem;
+        }
+
+        /*! header start */
+        .header .logo a img {
+            height: 7rem;
+        }
+
+        .header {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            height: 7rem;
+            /* margin: 2% 2% 2% 2%; */
+            margin-left: 26%;
+            margin-top: 2%;
+            border-radius: 30rem;
+            box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+            /* z-index: 1000; */
+            position: absolute;
+        }
+
+            .header .navbar a {
+                margin: 0 1rem;
+                font-size: 1.6rem;
+                color: var(--black-color);
+                border: 0.1rem solid transparent;
+            }
+
+
+            .header .buttons button {
+                cursor: pointer;
+                font-size: 2.5rem;
+                margin-left: 2rem;
+                background-color: transparent;
+            }
+
+        /*! header end */
+
+        .main-body {
+            background-color: var(--main-color);
+            height: 200vh;
+        }
+
+        .main-body-first-phase {
+            background: url(../images/marvel.jpeg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 97.5vh;
+            height: 100vh;
+            position: relative;
+        }
+
+        /*! home start */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+            .home .content {
+                max-width: 60rem;
+            }
+
+                .home .content h3 {
+                    font-size: 6rem;
+                    color: #fff;
+                }
+
+                .home .content p {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 1.8;
+                    padding: 1rem 0;
+                    color: #ccc;
+                }
+
+        /*! home end */
+
+        /*! footer start */
+
+        .container {
+            max-width: 117rem;
+            margin: auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 7rem 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 1.5rem;
+        }
+
+            .footer-col h4 {
+                font-size: 1.8rem;
+                color: var(--white-color);
+                text-transform: capitalize;
+                margin-bottom: 3.5rem;
+                font-weight: 500;
+                position: relative;
+            }
+
+                .footer-col h4::before {
+                    content: '';
+                    position: absolute;
+                    Left: 0;
+                    bottom: -1rem;
+                    background-color: #e91e63;
+                    height: 0.2rem;
+                    box-sizing: border-box;
+                    width: 6rem;
+                }
+
+            .footer-col ul li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            .footer-col ul li a {
+                font-size: 1.6rem;
+                text-transform: capitalize;
+                color: var(--black-color);
+                text-decoration: none;
+                font-weight: 300;
+                color: #bbbbbb;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+                .footer-col ul li a:hover {
+                    color: var(--white-color);
+                    padding-left: 0.8rem;
+                }
+
+            .footer-col .social-links a {
+                display: inline-block;
+                height: 4rem;
+                width: 4rem;
+                background-color: rgba(255, 255, 255, 0.2);
+                margin: 0 1rem 1rem 0;
+                text-align: center;
+                line-height: 4rem;
+                border-radius: 50%;
+                color: var(--white-color);
+                transition: all 0.5s ease;
+            }
+
+
+                .footer-col .social-links a:hover {
+                    color: #24262b;
+                    background-color: var(--white-color);
+                }
+
+
+        /*! footer end */
+        /*Carousel*/
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 45rem;
+        }
+
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+            border-radius: 0;
+        }
+
+        .carousel-inner {
+            padding: 1em;
+        }
+
+
+        .grid-item {
+            margin-right: 10px; /* You can adjust the value to set the desired space */
+        }
+
+        .carousel-inner .images-wrapper img {
+            height: 450px; /* Adjust the value to your desired height */
+        }
+
+
+
+
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+            gap: 1em;
+            margin-bottom: 6em;
+        }
+
+        .grid-item {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+            .grid-item.large {
+                grid-row: span 2;
+            }
+
+            .grid-item img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+
+        .images-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .images-wrapper img {
+                flex: 0 0 auto;
+            }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            text-align: center; /* Center the text within the column */
+        }
+
+            .column img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+        .column-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .btn-in-column {
+            background-color: #4c5b6c;
+            color: #fff;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn-in-column:hover {
+                color: #e1e1e1;
+            }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+}
+
+
+<h2 style="color: #e1e1e1;">Şimdi Seç</h2>
+
+
+<div class="row" style="margin-top: -40px;">
+    <div class="column" id="konser-column">
+        <div class="column-content">
+            <div class="button-wrapper">
+                <a href="@Url.Action("konser", "Home")" class="btn-in-column">Konser</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column" id="film-column">
+        <div class="column-content">
+            <div class="button-wrapper">
+                <a href="@Url.Action("film", "Home")" class="btn-in-column">Film</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column" id="tiyatro-column">
+        <div class="column-content">
+            <div class="button-wrapper">
+                <a href="@Url.Action("tiyatro", "Home")" class="btn-in-column">Tiyatro</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="heading">Vizyondaki Filmler</h1>
+    <h3 class="heading">
+        <a href="@Url.Action("film", "Home")" class="heading-link">Tümünü Gör</a>
+    </h3>
+</div>
+
+
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="cards-wrapper">
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=47})"><img src="~/Content/images/filmler/aclik-oyunlari.jpg" class="img-fluid" alt="..."></a>
+
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=43})"><img src="~/Content/images/filmler/ataturk.png" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=50})"><img src="~/Content/images/filmler/aybuke.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=51})"><img src="~/Content/images/filmler/cok-ask.jpg" class="img-fluid" alt="..."></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="cards-wrapper">
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=49})"><img src="~/Content/images/filmler/dolunay-katilleri.jpeg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=45})"><img src="~/Content/images/filmler/hayat.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=3})"><img src="~/Content/images/filmler/kuru-otlar-ustune.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=44})"><img src="~/Content/images/filmler/kızıl-gokyuzu.jpg" class="img-fluid" alt="..."></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="cards-wrapper">
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=2})"><img src="~/Content/images/filmler/murat-gogebakan-kalbim-yarali.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=1})"><img src="~/Content/images/filmler/napolyon.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=46})"><img src="~/Content/images/filmler/sessiz-gece.jpg" class="img-fluid" alt="..."></a>
+                </div>
+                <div class="grid-item small">
+                    <a loading="lazy" href="@Url.Action("filmInfo", "Home", new { id=48})"><img src="~/Content/images/filmler/testere10.jpg" class="img-fluid" alt="..."></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"></a>
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"></a>
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="heading">Konserler</h1>
+    <h3 class="heading">
+        <a href="@Url.Action("konser", "Home")" class="heading-link">Tümünü Gör</a>
+    </h3>
+</div>
+
+<div class="grid-container">
+    <div class="grid-item large">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=22})"><img src="~/Content/images/konser/bizim-turkuler.jpg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=8})"><img src="~/Content/images/konser/bulutsuzluk-ozlemi.jpg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=10})"><img src="~/Content/images/konser/burak-kartal.jpeg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=20})"><img src="~/Content/images/konser/ceren-gundogdu.jpg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=4})"><img src="~/Content/images/konser/emre-aydin.jpg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=13})"><img src="~/Content/images/konser/feridun-duzagac.jpg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=12})"><img src="~/Content/images/konser/gonul-cografyamizdan.jpeg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=14})"><img src="~/Content/images/konser/grup-abdal.jpeg" class="img-fluid" alt="..."></a>
+    </div>
+    <div class="grid-item small">
+        <a loading="lazy" href="@Url.Action("konserInfo", "Home", new { id=19})"><img src="~/Content/images/konser/jay-jay-johanson.jpeg" class="img-fluid" alt="..."></a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="heading">Tiyatro</h1>
+    <h3 class="heading">
+        <a href="@Url.Action("tiyatro", "Home")" class="heading-link">Tümünü Gör</a>
+    </h3>
+</div>
+
+
+<div id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="images-wrapper">
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=6})"><img src="~/Content/images/tiyatrolar/amadeus.jpg" class="img-fluid" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=23})"><img src="~/Content/images/tiyatrolar/ask-hikayen-dusmus.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=24})"><img src="~/Content/images/tiyatrolar/askin-provasi.png" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=25})"><img src="~/Content/images/tiyatrolar/bulent-beyin-hikayesi.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="images-wrapper">
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=26})"><img src="~/Content/images/tiyatrolar/canavar.jpeg" class="img-fluid" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=27})"><img src="~/Content/images/tiyatrolar/circir.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=28})"><img src="~/Content/images/tiyatrolar/cok-guzel-hareketler-2.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=29})"><img src="~/Content/images/tiyatrolar/dogu-ekspresinde-cinayet.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="images-wrapper">
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=30})"><img src="~/Content/images/tiyatrolar/freud.png" class="img-fluid" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatrorInfo", "Home", new { id=31})"><img src="~/Content/images/tiyatrolar/gokhan-unver.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=32})"><img src="~/Content/images/tiyatrolar/ilker-gumusoluk-tek-kisilik-gosteri.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+                <a loading="lazy" href="@Url.Action("tiyatroInfo", "Home", new { id=33})"><img src="~/Content/images/tiyatrolar/kel-diva.jpg" class="img-fluid d-none d-md-inline-block" alt="..."></a>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />    

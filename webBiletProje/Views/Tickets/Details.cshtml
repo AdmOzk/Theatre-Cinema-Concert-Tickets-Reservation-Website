@@ -1,0 +1,138 @@
+﻿@model webBiletProje.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainActor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainActor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HallTicketAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HallTicketAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentTicketAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentTicketAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rules)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rules)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tmonth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tmonth)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

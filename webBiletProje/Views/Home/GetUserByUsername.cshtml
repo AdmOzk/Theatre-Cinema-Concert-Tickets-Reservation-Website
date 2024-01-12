@@ -1,0 +1,41 @@
+﻿@model webBiletProje.Models.User
+
+@{
+    Layout = null; // This line prevents the layout's body from being included
+    ViewData["Title"] = "User Details";
+}
+
+<h1>User Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Sex</th>
+            <th>MailAddress</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>City</th>
+            <th>PhoneNumber</th>
+            <th>Address</th>
+            <!-- Add other properties as needed -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.UserId</td>
+            <td>@Model.Name</td>
+            <td>@Model.Surname</td>
+            <td>@Model.Sex</td>
+            <td>@Model.MailAddress</td>
+            <td>@Model.UserName</td>
+            <td>@Model.Password</td>
+            <td>@Model.City</td>
+            <td>@Model.PhoneNumber</td>
+            <td>@Model.Address</td>
+            <!-- Add other properties as needed -->
+        </tr>
+    </tbody>
+</table>

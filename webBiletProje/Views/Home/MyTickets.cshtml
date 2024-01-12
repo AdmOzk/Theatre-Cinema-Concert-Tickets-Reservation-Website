@@ -1,0 +1,50 @@
+﻿@model List<webBiletProje.Models.Orders>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Left sidebar with "Biletlerim" button -->
+            <div class="sidebar" id="sidebarMenu">
+                <a href="@Url.Action("MyTickets", "Home")" class="list-group-item list-group-item-action py-2 ripple active" data-content="2">
+                    <span>Biletlerim</span>
+                </a>
+                <a href="@Url.Action("Index", "Manage")" class="list-group-item list-group-item-action py-2 ripple" data-content="1">
+                    <span>Bilgilerim</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- Main content area for displaying tickets -->
+            <h2>Biletlerim</h2>
+
+            <table class="table">
+                <tr>
+                    <th>Email</th>
+                    <th>Category</th>
+                    <th>City</th>
+                    <th>Salon</th>
+                    <th>Ticket Date</th>
+                    <th>Ticket Hour</th>
+                    <th>Ticket Name</th>
+                    <th>Seat</th>
+                </tr>
+
+                
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.UserName</td>
+                        <td>@order.Category</td>
+                        <td>@order.City</td>
+                        <td>@order.Salon</td>
+                        <td>@order.TicketDate</td>
+                        <td>@order.TicketHour</td>
+                        <td>@order.TicketName</td>
+                        <td>@order.Seat</td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>

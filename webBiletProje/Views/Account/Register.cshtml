@@ -1,0 +1,114 @@
+﻿@model webBiletProje.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register"; //P@ssWord123
+}
+
+
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+}
+
+
+@section BodyClass {login-body}
+
+<div class="toast-container"></div>
+<div id="body-second">
+    <div class="wrapper" id="wrapper-register">
+        <div class="register">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h1 id="change">Kayıt Ol</h1>
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
+
+
+
+                <div class="form-group">
+                    <div class="input-box-nameSurname" id="name">
+
+                        <div class="input-box">
+                            @Html.TextBoxFor(m => m.FirstName, new { placeholder = "İsim" })
+                            <i class='bx bx-user'></i>
+                        </div>
+
+
+                        <div class="input-box">
+                            @Html.TextBoxFor(m => m.Surname, new { placeholder = "Soyisim" })
+                            <i class='bx bx-user'></i>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="input-box" id="tcKimlikNumarasi">
+                        @Html.TextBoxFor(m => m.SSN, new { placeholder = "T.C kimlik numarası" })
+                        <i class="fa-brands fa-odnoklassniki"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-box" id="phoneNumber">
+                        @Html.TextBoxFor(m => m.Numberphone, new { placeholder = "Cep Telefonu" })
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <div class="input-box" id="e-mail">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                        <i class="fa-solid fa-square-envelope"></i>
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <div class="input-box" id="sifre">
+                        @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Şifre" })
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="input-box" id="sifre_check">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Şifre Tekrar" })
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Register" />
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<div class="login-bottom-space"></div>

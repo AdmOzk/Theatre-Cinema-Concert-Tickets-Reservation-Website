@@ -1,0 +1,188 @@
+﻿@model List<webBiletProje.Models.Ticket>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Filmler";
+}
+
+@section BodyClass {film-body}
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~Content/css/film.css">
+    <link rel="stylesheet" href="~Content/css/style.css">
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    body {
+        overflow: overlay;
+        font-size: 1rem;
+        background: white !important;
+    }
+
+    /*! main part end */
+
+    main {
+        position: relative;
+        top: 0;
+        left: 0;
+        transition: all 0.2s;
+    }
+
+    /*! main part end */
+
+
+    /*! dreadcrumb part start */
+    .dreadcrumb {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1270px;
+        margin: 60px auto 30px auto;
+        align-items: center;
+    }
+
+        .dreadcrumb h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+
+    /*! dreadcrumb part end */
+
+
+
+
+    /*! kategori part start */
+
+    .kategori {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 1270px;
+        margin: auto;
+        width: 100%;
+        border-top: 1px solid #dfdfdf;
+    }
+
+    .etkinlikler {
+        width: 100%;
+        display: Flex;
+        flex-direction: column;
+        margin: 30px 0;
+    }
+
+
+        .etkinlikler ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+            .etkinlikler ul li {
+                display: flex;
+                flex-direction: column;
+                width: 244.4px;
+                margin-right: 9px;
+                margin-bottom: 48px;
+            }
+
+                .etkinlikler ul li figure {
+                    overflow: hidden;
+                    border-radius: 8px;
+                }
+
+    button, a {
+        cursor: pointer;
+    }
+
+    .etkinlikler ul li h3 {
+        margin-top: 12px;
+        margin-bottom: 2px;
+    }
+
+        .etkinlikler ul li h3 a {
+            font-weight: 500;
+            color: #000;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+
+
+    .etkinlikler ul li figure img {
+        border-radius: 8px;
+        transition: all ease 0.3s;
+    }
+
+    img, embed, iframe, object, video {
+        height: auto;
+        max-width: 100%;
+    }
+</style>
+
+<main>
+    <div class="dreadcrumb">
+        <h1 title="Sinema">Sinema</h1>
+    </div>
+    <div class="kategori">
+        <div id="etkinlikler" class="etkinlikler">
+            <ul>
+
+                @foreach (var ticket in Model)
+                {
+
+
+                    if (ticket.Kind == "film")
+                    {
+                        <li>
+                            <figure>
+                                <a href="@Url.Action("filmInfo", "Home", new { id = ticket.TicketId })"><img src="~/Content/images/filmler/@ticket.TImage" alt="alt"></a>
+                            </figure>
+                            <h3><a href="@Url.Action("filmInfo", "Home", new { id = ticket.TicketId })">@ticket.TName</a></h3>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</main>
+
+
+
+
+

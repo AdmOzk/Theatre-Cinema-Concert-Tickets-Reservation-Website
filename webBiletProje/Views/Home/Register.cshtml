@@ -1,0 +1,105 @@
+﻿@model webBiletProje.Models.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Biletim Kayıt Ol";
+}
+
+@section BodyClass {login-body}
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+}
+
+
+<div class="toast-container"></div>
+<div id="body-second">
+    <div class="wrapper" id="wrapper-register">
+        <div class="register">
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+            {
+
+
+                <h1 id="change">Kayıt Ol</h1>
+
+
+
+                <div class="input-box-nameSurname" id="name">
+                    <div class="input-box">
+                        @Html.TextBoxFor(m => m.Name, new { placeholder = "İsim" })
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="input-box">
+                        @Html.TextBoxFor(m => m.Surname, new { placeholder = "Soyisim" })
+                        <i class='bx bx-user'></i>
+                    </div>
+                </div>
+                <div class="input-box" id="tcKimlikNumarasi">
+                    <input type="text" placeholder="TC Kimlik Numarası" required>
+                    <i class="fa-brands fa-odnoklassniki"></i>
+                </div>
+                <div class="input-box" id="e-mail">
+                    @Html.TextBoxFor(m => m.MailAddress, new { placeholder = "E-Mail" })
+                    <i class="fa-solid fa-square-envelope"></i>
+                </div>
+                <div class="input-box" id="phoneNumber">
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "Cep Telefonu" })
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="input-box" id="kullaniciadi">
+                    @Html.TextBoxFor(m => m.Surname, new { placeholder = "Kullanıcı Adı" })
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="gender-choose">
+                    <form asp-action="Register" method="post" id="gender">
+                        <table>
+                            <tr>
+                                <td id="gender-space">Cinsiyet:</td>
+                                <td>
+                                    <label id="gender-first-space">
+                                        <input type="radio" asp-for="Sex" id="radioBtn_1" value="Kadın"> Kadın
+                                    </label>
+                                    <label>
+                                        <input type="radio" asp-for="Sex" id="radioBtn_2" value="Erkek"> Erkek
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="input-box" id="sifre">
+                    @Html.TextBoxFor(m => m.Password, new { placeholder = "Şifre" })
+                    <i class="fa-solid fa-phone"></i>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box" id="sifre_check">
+                    <input type="password" placeholder="Şifreni doğrula" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="input-box-sozlesme" id="sozlesme">
+                    <input type="checkbox" required>Sözleşmeyi Kabul Et!
+                </div>
+                <br>
+                <button type="submit" class="btn">Kayıt Ol</button>
+
+                <div class="register-link">
+                    <p>Aramıza hoş geldin <a href="main.html">Dibine kadar eğlence!</a></p>
+                </div>
+                <div class="register-link">
+                    <p>Zaten üyeyim <a href="login.html">Giriş Yap!</a></p>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<div class="login-bottom-space"></div>   

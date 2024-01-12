@@ -1,0 +1,117 @@
+﻿@model IEnumerable<webBiletProje.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kind)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MainActor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HallTicketAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentTicketAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.T_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.District)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rules)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tmonth)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kind)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MainActor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HallTicketAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentTicketAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.T_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.District)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rules)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tmonth)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TicketId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TicketId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,39 @@
+﻿@model List<webBiletProje.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Users";
+}
+
+@{
+    Layout = null;
+}
+
+@section BodyClass {}
+
+<div class="container mt-5">
+    <h2 class="mb-4">User List</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>User Email</th>
+                    <th>User Name</th>
+                    <th>Surname</th>
+                    <th>Phone Number</th>
+                    <th>User SSN</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Email</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.Surname</td>
+                        <td>@item.Numberphone</td>
+                        <td>@item.SSN</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,278 @@
+﻿@{
+    ViewBag.Title = "Other Page";
+    ViewData["Title"] = "Other Page";
+}
+
+<link rel="stylesheet" href="~/Content/css/Seat.css">
+
+<h2>Other Page</h2>
+
+<p>Seçilen Tarih: <span id="selectedDateDisplay"></span></p>
+<p>Seçilen Etkinlik: <span id="selectedEtkinlikDisplay"></span></p>
+<p>Seçilen Etknilik Adı: <span id="selectedSehirDisplay"></span></p>
+<p>Seçilen Şehir: <span id="selectedBranchDisplay"></span></p>
+<p>Seçilen Salon: <span id="selectedDepartmentDisplay"></span></p>
+<p>Seçilen Saat: <span id="selectedTimeDisplay"></span></p>
+
+<h2>Koltuk Seçimi</h2>
+
+<div class="movie-container">
+    <ul class="showcase">
+        <li>
+            <div class="seat"></div>
+            <small>Boş</small>
+        </li>
+        <li>
+            <div class="seat selected"></div>
+            <small>Seçilen</small>
+        </li>
+        <li>
+            <div class="seat occupied"></div>
+            <small>Dolu</small>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="screen"></div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <!-- Add more rows and seats as needed -->
+
+        <p class="text">
+            Seçtiğiniz Koltuk Sayısı <span id="count">0</span> 
+        </p>
+    </div>
+</div>
+
+
+
+<a href="@Url.Action("Payment", "Home")" id="continueButton" style="display:none">Continue to Payment</a>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+ const continueButton = document.getElementById('continueButton');
+
+// Get values from localStorage
+var selectedDate = localStorage.getItem('selectedDate');
+var selectedEtkinlik = localStorage.getItem('selectedEtkinlik');
+var selectedSehir = localStorage.getItem('selectedSehir');
+var selectedBranch = localStorage.getItem('selectedBranch');
+var selectedDepartment = localStorage.getItem('selectedDepartment');
+var selectedTime = localStorage.getItem('selectedTime');
+
+// Display the values in HTML
+document.getElementById('selectedDateDisplay').innerText = selectedDate;
+document.getElementById('selectedEtkinlikDisplay').innerText = selectedEtkinlik;
+document.getElementById('selectedSehirDisplay').innerText = selectedSehir;
+document.getElementById('selectedBranchDisplay').innerText = selectedBranch;
+document.getElementById('selectedDepartmentDisplay').innerText = selectedDepartment;
+document.getElementById('selectedTimeDisplay').innerText = selectedTime;
+
+// Log the values to the console for debugging
+console.log('selectedDate:', selectedDate);
+console.log('selectedEtkinlik:', selectedEtkinlik);
+console.log('selectedSehir:', selectedSehir);
+console.log('selectedBranch:', selectedBranch);
+console.log('selectedDepartment:', selectedDepartment);
+console.log('selectedTime:', selectedTime);
+
+const container = document.querySelector('.container');
+
+const count = document.getElementById('count');
+
+const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+
+// Otomatik olarak ID atama
+seats.forEach((seat, index) => {
+    seat.setAttribute('id', `seat-${index + 1}`);
+});
+
+// seçilen koltukları kayıt eder
+function updateSelectedCount() {
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+    const selectedSeatsCount = selectedSeats.length;
+    count.innerText = selectedSeatsCount;
+
+    // Remove local storage entry for unselected seats
+    const unselectedSeats = document.querySelectorAll('.row .seat:not(.selected)');
+    unselectedSeats.forEach(seat => {
+        const seatId = seat.getAttribute('id');
+        localStorage.removeItem(seatId);
+    });
+
+    // Log the IDs of selected seats to the console seçilenleri ekrana yazdırır ve
+    // sonraki butonu açar
+    const selectedSeatIds = Array.from(selectedSeats).map(seat => {
+        return seat.getAttribute('id');
+    });
+    console.log('Selected Seat IDs:', selectedSeatIds);
+
+    selectedSeatIds.forEach(seatId => {
+        localStorage.setItem(seatId, 'selected');
+    });
+
+    continueButton.style.display = selectedSeatsCount > 0 ? 'block' : 'none';
+}
+
+var occupiedSeatNumbers = @Html.Raw(Json.Encode(ViewBag.OccupiedSeatNumbers));
+var relevantdata = @Html.Raw(Json.Encode(ViewBag.OrdersWithSameProps));
+console.log(relevantdata);
+
+    const matchingOrders = relevantdata.filter(order =>
+        order.TicketDate === selectedDate &&
+        order.City === selectedBranch &&
+        order.Category === selectedEtkinlik &&
+        order.Salon === selectedDepartment &&
+        order.TicketName === selectedSehir &&
+        order.TicketHour === selectedTime
+    );
+
+    // Handle multiple matching orders
+    if (matchingOrders.length > 0) {
+        console.log('Matching orders:', matchingOrders);
+
+        // Combine all occupied seat numbers from multiple orders into a single array
+        const occupiedSeatNumbers = matchingOrders
+            .flatMap(order => order.Seat.split(',').map(num => parseInt(num.trim(), 10)));
+
+        // Update the seats based on the occupiedSeatNumbers
+        seats.forEach((seat, index) => {
+            const seatNumber = index + 1;
+
+            // Check if the seatNumber is in the array of occupiedSeatNumbers
+            if (occupiedSeatNumbers.includes(seatNumber)) {
+                seat.classList.add('occupied');
+            }
+        });
+    }
+
+// Seat click event seçme işlemi
+container.addEventListener('click', e => {
+    if (e.target.classList.contains('seat') &&
+        !e.target.classList.contains('occupied')) {
+        e.target.classList.toggle('selected');
+    }
+    updateSelectedCount();
+    updatePrice();
+});
+
+    var price = 0; // Default price
+
+    switch (selectedEtkinlik) {
+        case "Tiyatro":
+            price = 150;
+            break;
+        case "Sinema":
+            price = 120;
+            break;
+        case "Konser":
+            price = 200;
+            break;
+        // Add more cases if needed for other event types
+    }
+
+    // Display the price on the page
+
+
+    // ... (your existing code)
+
+    // Display the price on the page
+    var priceDisplay = document.createElement('h2');
+    priceDisplay.innerText = 'Fiyat: ' + price + ' TL';
+    container.appendChild(priceDisplay);
+
+
+    function updatePrice() {
+        var selectedSeatsCount = parseInt(count.innerText, 10);
+        var totalPrice = price * selectedSeatsCount;
+
+        // Linear increase in price based on the number of selected seats
+        totalPrice = price * selectedSeatsCount;
+
+        // Display the updated price on the page
+        priceDisplay.innerText = 'Fiyat: ' + totalPrice + ' TL';
+        localStorage.setItem('finalPrice', totalPrice);
+    }
+
+    updatePrice();
+</script>

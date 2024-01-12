@@ -1,0 +1,557 @@
+:root {
+    --main-color: #8EACCD;
+    --black-color: #0e0e0e;
+    --white-color: #ffff;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4)
+}
+button, input, select, textarea {
+    margin: 0;
+    outline: none;
+    
+}
+img, embed, iframe, object, video {
+    height: auto;
+    max-width: 100%;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+
+}
+
+
+.main{
+    width: 70%;
+    background-color: white;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.09);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin: 0 2.875rem 1.875rem;
+}
+.form-group {
+    padding-bottom: 1.5rem;
+}
+
+
+.split div {
+    width: 49%;
+}
+.form-group.split {
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.card-mx-auto h3 {
+    font-size: 1.1875rem;
+    color: #474747;
+    padding: 0.9375rem 0;
+    border-bottom: 1px solid rgba(71, 71, 71, 0.1);
+    margin-bottom: 1.875rem;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    
+}
+.form {
+    display: block;
+    margin-top: 0em;
+}
+.div{
+    display: block;
+}
+
+
+.card-mx-auto h3 img {
+    max-width: 30px;
+    margin-right: 10px;
+   
+}
+    body {
+        margin: 0;
+        font-family: "Lato", sans-serif;
+        background-color: #f8f8f8;
+        ;
+    }
+    section.out {
+        width: 100%;
+        padding: 2.125rem 0;
+        background-color: #f8f8f8;
+        margin-bottom: 3rem;
+    }
+    .outwrapper {
+        width: 90%;
+        display: flex;
+        -webkit-box-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    .sidebar {
+        width: 30%;
+        background-color: white;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.09);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        
+
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .sidebar a.active {
+        background-color:#8EACCD ;
+    }
+    
+
+    .sidebar a:hover:not(.active) {
+        color: grey;
+    }
+    .card-mx-auto{
+        width: 90%;
+        background-color: white;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        padding: 0 1.875rem 1.875rem
+    }
+
+    .form-control {
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        background-color: white;
+        padding: 0.625rem;
+        border: 1px solid #dddddd;
+        font-size: 1rem;
+        color: #474747;
+        width: 100%;
+    }
+    #cbCity {
+        width: 100%;
+        background-color: inherit;
+    }
+    
+    
+
+     .upDate {
+        background-color: #8EACCD;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        font-size: 1.0625rem;
+        color: #474747;
+        padding: 0.9375rem 1.25rem;
+        margin-top: 1.875rem;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+    button, a {
+        cursor: pointer;
+    }
+    a {
+        text-decoration: none;
+    }
+
+
+    /*Bilgilerim phone start */
+    .row {
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 0;
+        -moz-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -0.5rem;
+        margin-left: -0.5rem;
+    }
+
+    @media only screen and (min-width: 62em){
+    .col-md-2{
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    -ms-flex-preferred-size: 16.6666666667%;
+    flex-basis: 16.6666666667%;
+    max-width: 16.6666666667%;
+}
+}
+@media only screen and (min-width: 62em){
+.col-md-8 {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    -ms-flex-preferred-size: 66.6666666667%;
+    flex-basis: 66.6666666667%;
+    max-width: 66.6666666667%;
+}
+}
+
+    /*Bilgilerim phone end*/
+
+
+    /* Biletlerim starts*/
+
+    .biletlerim_tabs {
+        border: 1px solid #dfdfdf;
+    }
+  
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+   
+    
+   
+    a {
+        text-decoration: none;
+    }
+
+    .biletlerim_tabs .tabs-content {
+        padding: 30px;
+    }
+    .ticketsTable {
+        border: 1px solid #dfdfdf;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+ 
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: table;
+    }
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+        text-align: -internal-center;
+    }
+    .ticketsTable tbody tr {
+        border-top: 1px solid rgba(71, 71, 71, 0.1);
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    td {
+        display: table-cell;
+        vertical-align: inherit;
+    }
+    .allticketbuttton {
+        padding: 12px 24px;
+        border-radius: 4px;
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+        background: #8EACCD;
+
+    }
+    .ticketsTable thead tr th {
+        padding: 0.9375rem 0.625rem;
+        font-size: 0.875rem;
+        color: #474747;
+    }
+    .ticketsTable tbody tr td {
+        font-size: 0.875rem;
+        color: #474747;
+        border: none;
+        padding: 0.625rem;
+    }
+    td, th {
+        padding: 0;
+        text-align: left;
+    }
+
+
+
+
+    /*Biletlerim Ends*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 700px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .sidebar a {
+            float: left;
+        }
+
+      
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
+            text-align: center;
+            float: none;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*! footer start */
+
+    .container {
+        max-width: 117rem;
+
+        margin: auto;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        background-color: #24262b;
+        padding: 5rem 13rem;
+    }
+
+    .footer-col {
+        width: 25%;
+        padding: 0 1.5rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.3rem;
+        color: #fff;
+        text-transform: capitalize;
+        margin-bottom: 3.5rem;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        Left: 0;
+        bottom: -1rem;
+        background-color: #e91e63;
+        height: 0.2rem;
+        box-sizing: border-box;
+        width: 6rem;
+    }
+
+    .footer-col ul li:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: var(--black-color);
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: var(--white-color);
+        padding-left: 0.8rem;
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 1rem 1rem 0;
+        text-align: center;
+        line-height: 3rem;
+        border-radius: 50%;
+        color: var(--white-color);
+        transition: all 0.5s ease;
+    }
+
+    .main-space {
+        height: 50px;
+    }
+
+    .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: var(--white-color);
+    }
+
+    @media(max-width:76.7rem) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media(max-width:57.4rem) {
+        .footer-col {
+            width: 100%;
+
+        }
+    }
+
+    /*! footer end */
+
+
+
+    @media(max-width:76.7rem) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media(max-width:57.4rem) {
+        .footer-col {
+            width: 100%;
+
+        }
+    }
+
+
+
+    .header-myaccount {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        height: 4.3rem;
+        margin: 1rem 5%;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+        z-index: 1000;
+    }
+
+    .header-myaccount .navbar a {
+        margin: 0 0.5rem;
+        font-size: 1.1rem;
+        color: var(--black-color);
+        border: 0.1rem solid transparent;
+        text-decoration: none;
+    }
+
+    .header-myaccount button {
+        cursor: pointer;
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    .header-myaccount .buttons {
+        margin-right: 4rem;
+    }
+
+    .logo img {
+        height: 4rem;
+    }
+
+    .header .logo img {
+        height: 4rem;
+    }

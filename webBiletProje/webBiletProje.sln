@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webBiletProje", "webBiletProje.csproj", "{6A5178E3-193D-43A6-9303-1A28513D01F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A5178E3-193D-43A6-9303-1A28513D01F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5178E3-193D-43A6-9303-1A28513D01F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5178E3-193D-43A6-9303-1A28513D01F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5178E3-193D-43A6-9303-1A28513D01F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9905B7E6-6B49-431E-89D8-3779D50CE78D}
+	EndGlobalSection
+EndGlobal

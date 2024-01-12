@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Biletim Giriş Yap";
+}
+
+@section BodyClass {login-body}
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/css/login.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+}
+
+@section Scripts {
+    <script src="~/Content/js/login.js"></script>
+}
+
+<div class="toast-container"></div>
+<div id="body-second">
+    <div class="wrapper">
+        <form method="post" action="@Url.Action("Login", "Home")">
+            <h1 id="change">Giriş Yap</h1>
+            <div class="input-box" id="kullaniciadi">
+                <input type="text" name="userName" placeholder="Kullanıcı adı" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box" id="sifre">
+                <input type="password" name="password" placeholder="Şifre" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox">Beni hatrıla</label>
+                <a href="forgotpassword.html">Şifrem nereye gitti?</a>
+            </div>
+
+            <button type="submit" class="btn" onclick="checkFunction()">Giriş</button>
+
+            <div class="register-link">
+                <p>Hesabın yok mu? Eğlenceyi kaçırma <a href="register.html">Kayıt ol!</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="login-bottom-space"></div>
+

@@ -1,0 +1,94 @@
+@model webBiletProje.Models.IndexViewModel
+
+
+
+@{
+    ViewBag.Title = "Hesabım"; //P@ssWord123
+}
+
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="~/Content/css/myaccount.css">
+    <title>Profilim</title>
+</head>
+
+
+
+
+@section BodyClass {}
+
+<br>
+<section class="out">
+    <div class='outwrapper'>
+        <div class="sidebar" id="sidebarMenu">
+            <a href="@Url.Action("Index", "Manage")" class="list-group-item list-group-item-action py-2 ripple active" data-content="1">
+                <span>Bilgilerim</span>
+            </a>
+        </div>
+
+        <main class="main">
+            <div id="cardContainer" class="card-mx-auto">
+                <h3><img src="https://img.icons8.com/?size=256&id=H101gtpJBVoh&format=png"> Üyelik Bilgilerim</h3>
+                <form action="/tr-tr/WebLogin/UserUpdate" class="form-horizontal" id="frmRegister" method="post">
+                    <div class="form-group split" id="divFirstName">
+                        <div>
+                            <input class="form-control input-sm namesOnly" placeholder="Adı" data-val="true" data-val-length="Adı alanı en az 50 karakter olmalıdır." data-val-length-max="50" data-val-required="Lütfen Adınızı Girin" id="FirstName" maxlength="50" name="FirstName" type="text" value="Muhammed">
+                            <span class="field-validation-valid" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                        </div>
+
+                        <div>
+                            <input class="form-control input-sm namesOnly" placeholder="Soyadı" data-val="true" data-val-length="Soyadı alanı en az 50 karakter olmalıdır." data-val-length-max="50" data-val-required="Lütfen Soyadınızı Girin" id="LastName" maxlength="50" name="LastName" type="text" value="Gülsoy">
+                            <span class="field-validation-valid" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="divEmail">
+                        <input class="form-control" placeholder="E-Posta" data-val="true" value= User.Identity.GetUserName()>
+                        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <a class="upDate" style="margin-right: 10px; padding: 0.55rem 1.5rem !important; margin-top: unset !important " onclick="Register()">Güncelle</a>
+                    </div>
+                </form>
+
+                <div class="col-md-12" style="margin-top: 20px;">
+                    <h3><img src="https://img.icons8.com/?size=256&id=H101gtpJBVoh&format=png">Cep Telefonu (GSM)</h3>
+                </div>
+
+                <div class="form-group row" id="divGsmNumber">
+
+                    <input disabled="" class="form-control input-sm col-md-8" placeholder="Cep Telefonu" id="GsmNumber" name="GsmNumber" type="text" value="5395174016">
+                    <div class="col-md-2">
+                        <a class="upDate" href="/WebLogin/GSMConfirm" style="padding: 0.55rem 1.5rem !important; margin-top: unset !important">Değiştir</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/myaccount.js"></script>
+
+
+
+

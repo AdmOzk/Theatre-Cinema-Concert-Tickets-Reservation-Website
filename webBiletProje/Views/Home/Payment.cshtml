@@ -1,0 +1,234 @@
+﻿@{
+    ViewBag.Title = "Payment Page";
+    ViewData["Title"] = "Payment Page";
+}
+
+<link rel="stylesheet" href="~/Content/css/Seat.css">
+
+<style>
+
+    .larger-form {
+        max-width: 600px; /* Adjust the maximum width as needed */
+        margin: auto;
+    }
+</style>
+
+<h2>Ödeme Sayfası</h2>
+
+<p>Seçilen Tarih: <span id="selectedDateDisplay"></span></p>
+<p>Seçilen Etkinlik: <span id="selectedEtkinlikDisplay"></span></p>
+<p>Seçilen Etkinlik adı: <span id="selectedSehirDisplay"></span></p>
+<p>Seçilen Şehir: <span id="selectedBranchDisplay"></span></p>
+<p>Seçilen Salon: <span id="selectedDepartmentDisplay"></span></p>
+<p>Seçilen Saat: <span id="selectedTimeDisplay"></span></p>
+
+<h2>Seçilen Koltuk(lar)</h2>
+
+<div id="selectedSeatsDisplay"></div>
+
+<h2>Ücret</h2>
+
+<div id="selectedPriceDisplay"></div>
+
+
+
+<div class="container mt-5 larger-form">
+    <!-- Your existing HTML code for displaying selected values -->
+
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 id="paymentTitle" class="card-title" style="color:darkred">Ödeme Formu</h4>
+                </div>
+                <div class="card-body">
+                    <form action="@Url.Action("CreatePayment", "Home")" method="post" onsubmit="return validateForm()" id="paymentForm">
+                        <!-- Your form fields with larger width -->
+                        <div class="form-group">
+                            <label for="firstName">İsim</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="İsminizi giriniz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Soyisim</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Soyadınızı giriniz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Mail adresinizi giriniz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="creditCard">Credit Card Number</label>
+                            <input type="text" class="form-control" id="creditCard" placeholder="Kredi kartınızı giriniz" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="expiryDate">Expiration Date (MM/YY)</label>
+                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                            </div>
+                            <div class="col">
+                                <label for="cvv">CVV</label>
+                                <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Ödemeyi Onayla</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="@Url.Action("Payment", "Home")" id="continueButton" style="display:none">Ana Sayfaya Dön</a>
+
+
+
+
+<script>
+
+  
+    // Get values from localStorage
+    var selectedDate = localStorage.getItem('selectedDate');
+    var selectedEtkinlik = localStorage.getItem('selectedEtkinlik');
+    var selectedSehir = localStorage.getItem('selectedSehir');
+    var selectedBranch = localStorage.getItem('selectedBranch');
+    var selectedDepartment = localStorage.getItem('selectedDepartment');
+    var selectedTime = localStorage.getItem('selectedTime');
+
+    // Display the values in HTML
+    document.getElementById('selectedDateDisplay').innerText = selectedDate;
+    document.getElementById('selectedEtkinlikDisplay').innerText = selectedEtkinlik;
+    document.getElementById('selectedSehirDisplay').innerText = selectedSehir;
+    document.getElementById('selectedBranchDisplay').innerText = selectedBranch;
+    document.getElementById('selectedDepartmentDisplay').innerText = selectedDepartment;
+    document.getElementById('selectedTimeDisplay').innerText = selectedTime;
+
+    var finalPrice = localStorage.getItem('finalPrice');
+
+    document.getElementById('selectedPriceDisplay').innerText = finalPrice;
+
+
+
+    // Retrieve selected seats from localStorage
+    var selectedSeats = [];
+    for (var i = 1; i <= 100; i++) {
+        var seatStatus = localStorage.getItem('seat-' + i);
+        if (seatStatus === 'selected') {
+            selectedSeats.push('seat-' + i);
+        }
+    }
+
+    // Display selected seats on the page
+    var selectedSeatsDisplay = document.getElementById('selectedSeatsDisplay');
+    selectedSeatsDisplay.innerText = selectedSeats.join(', ');
+
+
+    function isValidCreditCard(cardNumber) {
+        // Remove any non-digit characters
+        var cardNumberClean = cardNumber.replace(/\D/g, '');
+
+        // Convert the card number string into an array of digits
+        var cardDigits = cardNumberClean.split('').map(Number);
+
+        // Reverse the array of digits
+        cardDigits.reverse();
+
+        // Double every second digit
+        for (var i = 1; i < cardDigits.length; i += 2) {
+            cardDigits[i] *= 2;
+            if (cardDigits[i] > 9) {
+                cardDigits[i] -= 9;
+            }
+        }
+
+        // Sum all the digits
+        var sum = cardDigits.reduce(function (acc, digit) {
+            return acc + digit;
+        }, 0);
+
+        // Check if the sum is a multiple of 10
+        return sum % 10 === 0;
+    }
+
+
+
+
+    async function validateForm() {
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var email = document.getElementById('email').value;
+        var creditCard = document.getElementById('creditCard').value;
+        var expiryDate = document.getElementById('expiryDate').value;
+        var cvv = document.getElementById('cvv').value;
+
+        // Check if the credit card number is valid
+        if (!isValidCreditCard(creditCard)) {
+            alert('Geçersiz kredi kartı numarası.');
+            return false;
+        }
+
+        var selectedSeats = [];
+        for (var i = 1; i <= 100; i++) {
+            var seatStatus = localStorage.getItem('seat-' + i);
+            if (seatStatus === 'selected') {
+                selectedSeats.push(i);
+            }
+        }
+
+        var selectedSeatsString = selectedSeats.join(',');
+
+
+
+        // Check other form fields
+        if (firstName !== '' && lastName !== '' && email !== '' && expiryDate !== '' && cvv !== '') {
+            try {
+                // Display a loading spinner or message here if needed
+
+                // Create an object with selected values
+                var selectedValues = {
+                    selectedDate: selectedDate,
+                    selectedEtkinlik: selectedEtkinlik,
+                    selectedSehir: selectedSehir,
+                    selectedBranch: selectedBranch,
+                    selectedDepartment: selectedDepartment,
+                    selectedTime: selectedTime,
+                    selectedSeatsString: selectedSeatsString
+                };
+
+                // Combine form data and selected values
+                var formData = new FormData(document.getElementById('paymentForm'));
+                for (var key in selectedValues) {
+                    formData.append(key, selectedValues[key]);
+                }
+
+                // Make an asynchronous POST request to the server
+                var response = await fetch('/Home/CreatePayment', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Successful response, show success message
+                    alert('Ödeme onaylandı!');
+                    document.getElementById('paymentForm').style.display = 'none';
+                    document.getElementById('continueButton').style.display = 'block';
+                    var paymentTitle = document.getElementById('paymentTitle');
+                    paymentTitle.style.color = 'green';
+                    paymentTitle.innerText = 'Ödeme onaylandı!';
+                } else {
+                    // Handle error response
+                    alert('Ödeme işlemi başarısız oldu.');
+                }
+            } catch (error) {
+                // Handle unexpected errors
+                console.error('Error:', error);
+            }
+
+            return false; // Prevent the default form submission
+        } else {
+            // Some fields are not filled, prevent form submission
+            alert('Lütfen tüm alanları doldurun.');
+            return false;
+        }
+    }
+</script>

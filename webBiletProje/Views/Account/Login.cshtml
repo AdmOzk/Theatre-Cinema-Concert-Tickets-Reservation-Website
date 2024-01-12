@@ -1,0 +1,80 @@
+﻿@using webBiletProje.Models
+
+@model LoginViewModel
+@{
+    ViewBag.Title = "Biletim Giriş Yap";    //P@ssword123
+}
+
+
+@section BodyClass {login-body}
+
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/css/login.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+}
+
+
+
+
+<div class="toast-container"></div>
+<div id="body-second">
+    <div class="wrapper">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h1 id="change">Giriş Yap</h1>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="input-box" id="kullaniciadi">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control",placeholder = "Email" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+
+
+
+            <div class="input-box" id="sifre">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control",placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+            </div>
+
+
+
+            <div class="remember-forgot">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </div>
+
+
+
+
+            <button type="submit" class="btn" onclick="checkFunction()">Giriş</button>
+
+
+
+            <div class="register-link">
+                <p>@Html.ActionLink("Hesabın yok mu? Eğlenceyi kaçırma Kayıt ol!", "Register")</p>
+            </div>
+
+
+
+
+            @* Enable this once you have account confirmation enabled for password reset functionality
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>*@
+        }
+    </div>
+
+</div>
+<div class="login-bottom-space"></div>
+
+
+
+

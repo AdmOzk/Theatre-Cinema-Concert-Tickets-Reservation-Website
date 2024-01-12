@@ -1,0 +1,84 @@
+﻿@model webBiletProje.Models.Ticket
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Konser Bilgileri";
+}
+
+@section BodyClass {icerik-body}
+
+@section Styles {
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/icerik.css">
+}
+
+
+<main>
+    <section class="eventDetailHeader" style="background-image: url(https://yourstayinbarcelona.files.wordpress.com/2023/02/1661193262778-coldplayflaixbacbarcelona.jpeg?w=1024); ">
+        <div class="eventHeaderContent ">
+            <div class="container">
+                <div class="eventSummary">
+                    <div class="poster">
+                        <img loading="lazy" alt="" src="~/Content/images/konser/@Model.TImage" class="eventPoster">
+                    </div>
+                    <div class="eventDetails">
+                        <h1 class="nameofticket">@Model.TName</h1>
+                        <br><br>
+                        <ul class="eventTags">
+                            <li><span class="kind">@Model.Kind</span></li>
+                        </ul>
+                        <br> <br>
+                        <li> <span class="mainactor">Ana Kişi: @Model.MainActor</span> </li>
+                        <br /><br /><br /><br />
+                        <li> <span class="mainactor" style="color:red;font-size:15px;font-weight:bold">Konser  Ücreti: 200</span> </li>
+                    </div>
+                </div>
+                <button style="font-size: 1.4rem" class="biletiniAlLg full flex alignCenter justifyCenter">
+                    <a href="@Url.Action("ShowAvailableAppointments", "Home")">
+                        <span>BİLETİNİ AL</span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="eventDetailBody @*flex*@">
+        <div class="container">
+            <div class="flex alignStart justifyStart">
+                <div class="tabButtons flex alignEnd justifyStart">
+                    <button class="active" data-tab="event-desc"><strong>Açıklama</strong></button>
+                </div>
+            </div>
+            <div class="tabContentWrapper flex directionColumn fluid">
+                <div data-content="event-desc" class="tabContent flex directionColumn activeContent">
+                    <p><strong>@Model.TName</strong></p>
+                    <p> @Model.TDescription</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="flex alignStart justifyStart">
+                <div class="tabButtons flex alignEnd justifyStart">
+                    <button class="active" data-tab="event-desc"><strong>Etkinlik Kuralları</strong></button>
+                </div>
+            </div>
+            <div class="tabContentWrapper flex directionColumn fluid">
+                <div data-content="event-desc" class="tabContent flex directionColumn activeContent">
+                    <p>@Model.Rules</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+

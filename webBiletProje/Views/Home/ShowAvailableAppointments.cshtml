@@ -1,0 +1,332 @@
+﻿
+
+@{
+    ViewBag.Title = "Bilet Al";
+    ViewData["Title"] = "Buy A Ticket";
+}
+
+
+<style>
+
+    #appointmentTableBody td.selected {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h2>Bilet Al</h2>
+
+
+
+@using (Html.BeginForm("ShowAvailableAppointments", "Home", FormMethod.Get))
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+
+
+                <div class="form-group">
+                    @Html.Label("Tarih Seç:")
+                    <input type="date" id="datePicker" name="currentDT" class="form-control">
+                </div>
+
+                @*scriptte sıkıntı var*@
+
+                <div class="form-group">
+                    @Html.Label("Etkinlik Seç:")
+                    @if (ViewBag.Etkinliks != null)
+                    {
+                        @Html.DropDownList("etkinlik", (SelectList)ViewBag.Etkinliks, "Etkinlik Seç", new { @class = "form-control", id = "etkinlikDropdown" })
+                    }
+                    else
+                    {
+                        <p>Etkinlik Bulunamadı.</p>
+                    }
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+                    @Html.Label("Etkinlik Seç:")
+                    <select id="sehirDropdown" name="sehir" class="form-control">
+                        <option value="">Etkinlik Seç</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Şehir Seç:")
+                    <select id="branchDropdown" name="branch" class="form-control">
+                        <option value="">Şehir Seç</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Salon Seç:")
+                    <select id="SalonDropdown" name="depart" class="form-control">
+                        <option value="">Salon Seç</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Müsait Saatleri Göster</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (Model is List<webBiletProje.Models.Appointment> appointments && appointments.Any())
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Saatler</th>
+                                <th>Saatler</th>
+                                <th>Saatler</th>
+                                <th>Saatler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentTableBody">
+                            @for (int i = 0; i < Model.Count; i += 4)
+                            {
+                                <tr>
+                                    @for (int j = i; j < i + 4 && j < Model.Count; j++)
+                                    {
+                                        <td>@Model[j].Saatler.ToString("hh\\:mm")</td>
+                                    }
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <a href="@Url.Action("OtherPage", "Home")" class="btn btn-success" name="next">Devam Et</a>
+    </div>
+
+
+}
+else
+{
+    <p>Bilgileri Giriniz.</p>
+}
+
+
+<p id="selectedDateInfo"></p>
+<p id="selectedEtkinlikInfo"></p>
+<p id="selectedSehirInfo"></p>
+<p id="selectedBranchInfo"></p>
+<p id="selectedDepartmentInfo"></p>
+<p id="selectedTime">Seçilen Saat: </p>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>
+
+
+    function updateDisplayedInfo() {
+        // Update the content of the <p> elements to display the stored values
+        $('#selectedDateInfo').text('Seçilen Tarih: ' + localStorage.getItem('selectedDate'));
+        $('#selectedEtkinlikInfo').text('Seçilen Etkinlik: ' + localStorage.getItem('selectedEtkinlik'));
+        $('#selectedSehirInfo').text('Seçilmiş Etkinlik Adı: ' + localStorage.getItem('selectedSehir'));
+        $('#selectedBranchInfo').text('Seçilen Şehir: ' + localStorage.getItem('selectedBranch'));
+        $('#selectedDepartmentInfo').text('Seçilen Salon: ' + localStorage.getItem('selectedDepartment'));
+        $('#selectedTimeInfo').text('Seçilen Saat: ' + localStorage.getItem('selectedTime'));
+    }
+
+
+
+    $(document).ready(function () {
+        // Populate branches based on the selected etkinlik
+        $('#etkinlikDropdown').change(function () {
+            var selectedEtkinlikId = $(this).val();
+            if (selectedEtkinlikId) {
+                $.ajax({
+                    url: '@Url.Action("GetetkinlikdetayByEtkinlik", "Home")',
+                    type: 'GET',
+                    data: { etkinlikId: selectedEtkinlikId },
+                    success: function (data) {
+                        // Clear existing options
+                        $('#sehirDropdown').empty();
+
+                        // Add default option
+                        $('#sehirDropdown').append($('<option>').val('').text('Etkinlik Seç'));
+
+                        // Add options based on the data returned from the server
+                        $.each(data, function (index, item) {
+                            $('#sehirDropdown').append($('<option>').val(item.Value).text(item.Text));
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error); // Log any errors to the console
+                    }
+                });
+            } else {
+                // If no etkinlik is selected, clear şehir options
+                $('#sehirDropdown').empty();
+                $('#sehirDropdown').append($('<option>').val('').text('Etkinlik Seç'));
+            }
+        });
+
+
+
+        // Populate branches based on the selected şehir
+        $('#sehirDropdown').change(function () {
+            var selectedSehirId = $(this).val();
+            if (selectedSehirId) {
+                $.ajax({
+                    url: '@Url.Action("GetsehirByEtkinlikDetay", "Home")',
+                    type: 'GET',
+                    data: { sehirId: selectedSehirId },
+                    success: function (data) {
+                        // Clear existing options
+                        $('#branchDropdown').empty();
+
+                        // Add default option
+                        $('#branchDropdown').append($('<option>').val('').text('Etkinlik Seç'));
+
+                        // Add options based on the data returned from the server
+                        $.each(data, function (index, item) {
+                            $('#branchDropdown').append($('<option>').val(item.Value).text(item.Text));
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error); // Log any errors to the console
+                    }
+                });
+            } else {
+                // If no şehir is selected, clear branch options
+                $('#branchDropdown').empty();
+                $('#branchDropdown').append($('<option>').val('').text('Şehir Seç'));
+            }
+        });
+
+        // Populate Salons based on the selected branch
+        $('#branchDropdown').change(function () {
+            var selectedBranchId = $(this).val();
+            if (selectedBranchId) {
+                $.ajax({
+                    url: '@Url.Action("GetSalonsBySehir", "Home")',
+                    type: 'GET',
+                    data: { branchId: selectedBranchId },
+                    success: function (data) {
+                        // Clear existing options
+                        $('#SalonDropdown').empty();
+
+                        // Add default option
+                        $('#SalonDropdown').append($('<option>').val('').text('Salon Seç'));
+
+                        // Add options based on the data returned from the server
+                        $.each(data, function (index, item) {
+                            $('#SalonDropdown').append($('<option>').val(item.Value).text(item.Text));
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error); // Log any errors to the console
+                    }
+                });
+            } else {
+                // If no branch is selected, clear Salon options
+                $('#SalonDropdown').empty();
+                $('#SalonDropdown').append($('<option>').val('').text('Salon Seç'));
+            }
+        });
+
+
+
+        // Highlight selected time slot
+        // Highlight selected time slot
+        $('#appointmentTableBody td').click(function () {
+            // Remove highlight from previously selected time slot
+            $('#appointmentTableBody td.selected').removeClass('selected');
+
+            // Add highlight to the clicked time slot
+            $(this).addClass('selected');
+
+            // Update the selected time in TempData
+            var selectedTime = $(this).text();
+
+            localStorage.setItem('selectedTime', selectedTime);
+
+            updateDisplayedInfo();
+            // Additional: Trigger a custom event to handle the selected cell
+            $(document).trigger('cellSelected', [selectedTime]);
+        });
+
+        // Check if there's a selected time in localStorage and highlight it
+        var storedSelectedTime = localStorage.getItem('selectedTime');
+        if (storedSelectedTime) {
+            $('#appointmentTableBody td:contains("' + storedSelectedTime + '")').addClass('selected');
+        }
+
+        // Additional: Listen for the custom event when a cell is selected
+        $(document).on('cellSelected', function (event, selectedTime) {
+            // Do something with the selected cell's value
+            console.log('Selected Cell Value:', selectedTime);
+
+            // Update the text of the <p> element to display the selected time
+            $('#selectedTime').text('Selected Time: ' + selectedTime);
+        });
+        $('form').submit(function () {
+            var selectedDate = $('#datePicker').val();
+            var selectedEtkinlikId = $('#etkinlikDropdown').val();
+            var selectedSehirId = $('#sehirDropdown').val();
+            var selectedBranchId = $('#branchDropdown').val();
+            var selectedDepartmentId = $('#SalonDropdown').val();
+
+            // Set the selected values to localStorage
+            localStorage.setItem('selectedDate', selectedDate);
+
+            // Set etkinlik name based on the selected etkinlikId
+            var etkinlikName = $('#etkinlikDropdown option:selected').text();
+            localStorage.setItem('selectedEtkinlik', etkinlikName);
+
+            // Set sehir name based on the selected sehirId
+            var sehirName = $('#sehirDropdown option:selected').text();
+            localStorage.setItem('selectedSehir', sehirName);
+
+            // Set branch name based on the selected branchId
+            var branchName = $('#branchDropdown option:selected').text();
+            localStorage.setItem('selectedBranch', branchName);
+
+            // Set department name based on the selected departmentId
+            var departmentName = $('#SalonDropdown option:selected').text();
+            localStorage.setItem('selectedDepartment', departmentName);
+
+            // Log the selected values to the console
+            console.log('selectedDate:', selectedDate);
+            console.log('selectedEtkinlik:', etkinlikName);
+            console.log('selectedSehir:', sehirName);
+            console.log('selectedBranch:', branchName);
+            console.log('selectedDepartment:', departmentName);
+            console.log('selectedTime:', storedSelectedTime); // Using storedSelectedTime from above
+
+            return true; // Continue with form submission
+        });
+
+
+        updateDisplayedInfo();
+    });
+
+
+
+</script>

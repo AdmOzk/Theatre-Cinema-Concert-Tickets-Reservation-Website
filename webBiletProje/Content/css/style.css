@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+}
+
+:root {
+    --main-color: #8EACCD;
+    --black-color: #0e0e0e;
+    --white-color: #ffff;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4)
+}
+
+
+/*! base html codes */
+html {
+    font-size: 62.5%;
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+}
+
+
+body {
+    background-color: var(--main-color);
+    /* height:200vh; */
+}
+
+section {
+    padding: 3.5rem 7%;
+}
+
+
+
+
+.heading {
+    color: #fff;
+    padding: 1rem;
+    font-size: 4rem;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+.logo img {
+    height: 6rem;
+}
+
+/*! header start */
+.header .logo a img {
+    height: 7rem;
+} 
+
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    height: 7rem;
+    /* margin: 2% 2% 2% 2%; */
+    margin-left: 26%;
+    margin-top: 2%;
+    border-radius: 30rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+    /* z-index: 1000; */
+    position: absolute;
+}   
+
+.header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--black-color);
+    border: 0.1rem solid transparent;
+}
+
+
+.header .buttons button {
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
+}
+
+/*! header end */
+
+.main-body {
+    background-color: var(--main-color);
+    height:200vh;
+}
+
+.main-body-first-phase{
+    background: url(../images/marvel.jpeg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 97.5vh;
+    height: 100vh;
+    position: relative;
+}
+
+/*! home start */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: #fff;
+}
+
+.home .content p {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #ccc;
+}
+
+/*! home end */
+
+
+
+
+
+/*! footer start */
+
+.container{
+    max-width: 117rem;
+    
+    margin:auto;
+}
+ul{
+    list-style: none;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer{
+    background-color: #24262b;
+    padding: 7rem 0;
+}
+
+.footer-col{
+    width:25%;
+    padding: 0 1.5rem;
+}
+
+.footer-col h4{
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    Left: 0;
+    bottom: -1rem;
+    background-color: #e91e63;
+    height: 0.2rem;
+    box-sizing: border-box;
+    width: 6rem;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 1rem;
+}
+.footer-col ul li a{
+    font-size: 1.6rem;
+    color: var(--black-color);
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition:all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color:var(--white-color);
+    padding-left: 0.8rem;
+}
+.footer-col .social-links a{
+    display:inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 50%;
+    color: var(--white-color);
+    transition: all 0.5s ease;
+}
+
+
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: var(--white-color);
+}
+@media(max-width:76.7rem){
+    .footer-col{
+        width:50%;
+        margin-bottom: 3rem;
+    }
+}
+
+@media(max-width:57.4rem){
+    .footer-col{
+        width:100%;
+        
+    }
+}
+/*! footer end */
+

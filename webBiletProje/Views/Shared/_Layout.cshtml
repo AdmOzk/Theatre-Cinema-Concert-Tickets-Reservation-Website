@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/css/login.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+
+</head>
+
+<body class="@RenderSection("BodyClass", required: false)">
+    <header class="header-login">
+        <a href="@Url.Action("Index", "Home")" class="logo">
+            <img src="~/Content/images/logo.png" alt="logo" />
+        </a>
+        <nav class="navbar">
+            <a href="@Url.Action("konser", "Home")">Konser </a>
+            <a href="@Url.Action("tiyatro", "Home")">Tiyatro</a>
+            <a href="@Url.Action("film", "Home")">Film</a>
+            <a href="@Url.Action("Contact", "Home")">İletişim </a>
+        </nav>
+        
+        @Html.Partial("_LoginPartial")
+            
+       
+    </header>
+
+
+    @RenderBody()
+
+
+    <!--! footer section start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Kurumsal</h4>
+                    <ul>
+                        <li><a href="@Url.Action("Contact", "Home")">Kişisel Verilerin Korunması</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Sözleşme ve Politikalar</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Entegre Yönetim Sistemi Politikası</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Hakkımızda</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Müşteri Hizmetleri</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Çerez Aydınlatma Metni</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Online Ödeme Koşulları</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Yardım</h4>
+                    <ul>
+                        <li><a href="@Url.Action("Contact", "Home")">SSS</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">İptal,İade ve Değişim</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Nasıl Bilet Alınır</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")">Biletinizi Mi Kaybettiniz?</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bizimle Çalışın</h4>
+                    <ul>
+
+                        <li><a href="@Url.Action("Contact", "Home")">İş Başvurusu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Sosyal Medya</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--! footer section end -->
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

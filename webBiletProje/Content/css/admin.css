@@ -1,0 +1,233 @@
+/* General Start */
+* {
+    box-sizing: border-box;
+}
+
+.admin-menu {
+    background-color: #22a6b3;
+}
+
+/* General End */
+/* Left Menu Start */
+.left-menu {
+    background-color: #67729D;
+    width: 15%;
+    text-align: center;
+    border: 2px solid #E7BCDE;
+    border-radius: 10%;
+    padding: 5px;
+    display: inline-block;
+    float: left;
+    margin-top: 15%;
+}
+
+.left-menu table {
+    width: 100%;
+}
+
+.left-menu table a {
+    text-decoration: none;
+    color: #FED9ED;
+}
+
+.left-menu table tr th {
+    font-size: 1.3rem;
+}
+
+.left-menu table tr td {
+    border: 2px solid #E7BCDE;
+    border-radius: 5%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.left-menu table tr td:hover {
+    background-color: #E7BCDE;
+}
+
+/* Left Menu End */
+/* Top Filter Start */
+.top-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #FED9ED; */
+    width: 70%;
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search {
+    height: 40px;
+    width: 40px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #22a6b3;
+    padding-right: 40px;
+    color: #fff;
+}
+
+.input-search::placeholder {
+    color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:focus~.input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+/* Top Filter End */
+/* Information Start */
+.information{
+    /* background-color: azure; */
+    width: 69%;
+    height: 100%;
+    margin-left: 16%;
+    padding-top: 1%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+.information-box{
+    background-color: #67729D;
+    width: 95%;
+    height: 70px;
+    border-radius: 7px;
+    margin-left: 2%;
+}
+/* Information End */
+
+/*! footer start */
+
+.container{
+    max-width: 117rem;
+    
+    margin:auto;
+}
+ul{
+    list-style: none;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer{
+    background-color: #24262b;
+    padding: 7rem 0;
+}
+
+.footer-col{
+    width:25%;
+    padding: 0 1.5rem;
+}
+
+.footer-col h4{
+    font-size: 1.8rem;
+    color: var(--white-color);
+    text-transform: capitalize;
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    Left: 0;
+    bottom: -1rem;
+    background-color: #e91e63;
+    height: 0.2rem;
+    box-sizing: border-box;
+    width: 6rem;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 1rem;
+}
+.footer-col ul li a{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: var(--black-color);
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition:all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color:var(--white-color);
+    padding-left: 0.8rem;
+}
+.footer-col .social-links a{
+    display:inline-block;
+    height: 4rem;
+    width: 4rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 50%;
+    color: var(--white-color);
+    transition: all 0.5s ease;
+}
+
+.main-space{
+    height: 50px;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: var(--white-color);
+}
+@media(max-width:76.7rem){
+    .footer-col{
+        width:50%;
+        margin-bottom: 3rem;
+    }
+}
+
+@media(max-width:57.4rem){
+    .footer-col{
+        width:100%;
+        
+    }
+}
+/*! footer end */

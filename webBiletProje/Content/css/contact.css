@@ -1,0 +1,231 @@
+:root {
+    --main-color: #8EACCD;
+    --black-color: #0e0e0e;
+    --white-color: #ffff;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4)
+}
+    body {
+        margin: 0;
+        font-family: "Lato", sans-serif;
+        background-color: #8EACCD;
+        ;
+    }
+
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 400px;
+        background-color: #f1f1f1;
+        position: absolute;
+        height: 800px;
+        overflow: auto;
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .sidebar a.active {
+        color: #FF4C29;
+    }
+
+    .sidebar a:hover:not(.active) {
+        color: grey;
+    }
+
+    div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    @media screen and (max-width: 700px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .sidebar a {
+            float: left;
+        }
+
+        div.content {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
+            text-align: center;
+            float: none;
+        }
+    }
+
+
+    /*! footer start */
+
+    .container {
+        max-width: 117rem;
+
+        margin: auto;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        background-color: #24262b;
+        padding: 5rem 13rem;
+    }
+
+    .footer-col {
+        width: 25%;
+        padding: 0 1.5rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.3rem;
+        color: #fff;
+        text-transform: capitalize;
+        margin-bottom: 3.5rem;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        Left: 0;
+        bottom: -1rem;
+        background-color: #e91e63;
+        height: 0.2rem;
+        box-sizing: border-box;
+        width: 6rem;
+    }
+
+    .footer-col ul li:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .footer-col ul li a {
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: var(--black-color);
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: var(--white-color);
+        padding-left: 0.8rem;
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 1rem 1rem 0;
+        text-align: center;
+        line-height: 3rem;
+        border-radius: 50%;
+        color: var(--white-color);
+        transition: all 0.5s ease;
+    }
+
+    .main-space {
+        height: 50px;
+    }
+
+    .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: var(--white-color);
+    }
+
+    @media(max-width:76.7rem) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media(max-width:57.4rem) {
+        .footer-col {
+            width: 100%;
+
+        }
+    }
+
+    /*! footer end */
+
+
+
+    @media(max-width:76.7rem) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media(max-width:57.4rem) {
+        .footer-col {
+            width: 100%;
+
+        }
+    }
+
+
+
+    .header-contact {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        height: 4.3rem;
+        margin: 1rem 5%;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+        z-index: 1000;
+    }
+
+    .header-contact .navbar a {
+        margin: 0 0.5rem;
+        font-size: 1.1rem;
+        color: var(--black-color);
+        border: 0.1rem solid transparent;
+        text-decoration: none;
+    }
+
+    .header-contact button {
+        cursor: pointer;
+        font-size: 2rem;
+        margin-right: 0.5rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    .header-contact .buttons {
+        margin-right: 4rem;
+    }
+
+    .logo img {
+        height: 4rem;
+    }
+
+    .header .logo img {
+        height: 4rem;
+    }
