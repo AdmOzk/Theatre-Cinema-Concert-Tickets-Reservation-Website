@@ -42,4 +42,4 @@ Only admin can see the Admin page and from there admin can see all users , can e
 should be like that ,change YOURSERVERNAME with your actual mssql server name , YOURUSERNAME with your mssql actual user name , YOURPASSWORD with your actual mssql password
 
 
-![alt text]](webprojess-2.png) 
+![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true](https://github.com/AdmOzk/Theatre-Cinema-Concert-Tickets-Reservation-Website/blob/main/webprojess-3.png)https://github.com/AdmOzk/Theatre-Cinema-Concert-Tickets-Reservation-Website/blob/main/webprojess-3.png)
