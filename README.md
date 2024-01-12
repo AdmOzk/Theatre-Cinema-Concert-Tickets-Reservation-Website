@@ -40,3 +40,6 @@ Only admin can see the Admin page and from there admin can see all users , can e
  then set up the .bak file to mssql server. 
  after that change the web-config file where  <add name="biletDataConnection" connectionString="Server=YOURSERVERNAME;Database=icerik;User ID=YOURUSERNAME;Password=YOURPASSWORD;Integrated Security=False;MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
 should be like that ,change YOURSERVERNAME with your actual mssql server name , YOURUSERNAME with your mssql actual user name , YOURPASSWORD with your actual mssql password
+
+
+![alt text](webprojess-5.png) 
