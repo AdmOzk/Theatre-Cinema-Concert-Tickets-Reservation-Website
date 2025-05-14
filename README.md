@@ -41,5 +41,44 @@ Only admin can see the Admin page and from there admin can see all users , can e
  after that change the web-config file where  <add name="biletDataConnection" connectionString="Server=YOURSERVERNAME;Database=icerik;User ID=YOURUSERNAME;Password=YOURPASSWORD;Integrated Security=False;MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
 should be like that ,change YOURSERVERNAME with your actual mssql server name , YOURUSERNAME with your mssql actual user name , YOURPASSWORD with your actual mssql password
 
-# HOW TO REVIEW PROJECT
-Demo can be seen by png files. 
+# Screenshots
+
+![ekran1](https://github.com/user-attachments/assets/df39236c-eac3-4668-95cc-63727d8e75b8)
+
+![ekran2](https://github.com/user-attachments/assets/8bdac72b-27e7-4e09-bf2f-095012e06bda)
+
+![ekran3](https://github.com/user-attachments/assets/bba94475-31c9-4b78-93eb-c36775aa6a8e)
+
+![ekran4](https://github.com/user-attachments/assets/c0e7540e-d8d6-4540-9dab-9a0e2993c7cc)
+
+![ekran5](https://github.com/user-attachments/assets/3338a51e-eecf-412e-b7b1-0df21eb6e35c)
+
+![webprojesigeliyor](https://github.com/user-attachments/assets/a22df2dc-b125-41be-8d06-2ab862501a68)
+
+![webprojess-2](https://github.com/user-attachments/assets/2bc2d53e-664d-4401-b5dd-03e3dc63c7b6)
+
+![webprojess-3](https://github.com/user-attachments/assets/5ab2135b-5896-4966-af97-308dea136157)
+
+![webprojess-4](https://github.com/user-attachments/assets/0b9029e5-afb2-4ea6-990d-e5176bd06288)
+
+![webprojess-5](https://github.com/user-attachments/assets/48ead005-f1fd-4d49-99f7-094ba0a98296)
+
+![webprojess-6](https://github.com/user-attachments/assets/59a00ff4-a015-45ae-befb-a403d201eccc)
+
+![webprojess-7](https://github.com/user-attachments/assets/13ab09cb-40fb-4acd-b21f-6f9a0ee78fbb)
+
+![webprojess-8](https://github.com/user-attachments/assets/70b7ea21-49c8-44ec-94e8-b00912678d1f)
+
+![webprojess-9](https://github.com/user-attachments/assets/c9d0a93b-e4e5-4513-9508-e0f3719bcf5f)
+
+
+
+
+
+
+
+
+
+
+
+
